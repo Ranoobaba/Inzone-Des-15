@@ -474,41 +474,61 @@ export default function App() {
                       {iv.observations.length > 0 && (
                         <Card style={{ marginTop: 16 }}>
                           <SectionLabel>Field Observations</SectionLabel>
-                          <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 8 }}>
-                            {iv.observations.map((o, i) => (
-                              <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                                <span style={{ color: "#a1a1aa", flexShrink: 0, marginTop: 2 }}>—</span>
-                                <span style={{ fontSize: 14, color: "#52525b", lineHeight: 1.6 }}>{o}</span>
-                              </div>
-                            ))}
-                          </div>
-
-                          {/* Photo documentation */}
-                          <div style={{ marginTop: 20, paddingTop: 20, borderTop: "1px solid #f4f4f5" }}>
-                            <SectionLabel>Photo Documentation</SectionLabel>
-                            <div style={{ marginTop: 10, border: "1px solid #e4e4e7", borderRadius: 10, overflow: "hidden" }}>
-                              <div style={{ background: "#fafafa", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 220, position: "relative" }}>
-                                <img
-                                  src="https://i.imgur.com/WqesFlP.jpeg"
-                                  alt="Participant observed touching hair during interview"
-                                  onError={e => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
-                                  style={{ width: "100%", maxHeight: 340, objectFit: "cover", display: "block" }}
-                                />
-                                <div style={{ display: "none", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, padding: 40, color: "#a1a1aa", fontSize: 13, textAlign: "center" }}>
-                                  <span style={{ fontSize: 28 }}>📷</span>
-                                  <span>Replace <code>REPLACE_WITH_HOSTED_IMAGE_URL</code> with your hosted image link</span>
-                                </div>
-                              </div>
-                              <div style={{ padding: "12px 16px", background: "#fff", borderTop: "1px solid #f4f4f5" }}>
-                                <p style={{ margin: "0 0 4px", fontSize: 13, fontWeight: 600, color: "#18181b" }}>
-                                  Participant touches hair and avoids eye contact mid-response
-                                </p>
-                                <p style={{ margin: 0, fontSize: 13, color: "#71717a", lineHeight: 1.6 }}>
-                                  <strong>Breakdown / Opportunity:</strong> Physical self-soothing behavior (hair-touching, gaze aversion) appeared consistently during cognitively loaded responses — suggesting stress and cognitive load manifest physically before users consciously register them. This points to an opportunity for ambient, body-signal-based stress detection rather than self-reported check-ins.
+                          {iv.participant === "Gabriel Ryan Turner" ? (
+                            <div style={{ marginTop: 8 }}>
+                              <audio
+                                controls
+                                src="/Call with Gabriel Turner.m4a"
+                                style={{ width: "100%", maxWidth: 480, height: 40 }}
+                              >
+                                Your browser does not support the audio element.
+                              </audio>
+                              <div style={{ marginTop: 16, padding: "12px 16px", background: "#fafafa", border: "1px solid #e4e4e7", borderRadius: 8 }}>
+                                <p style={{ margin: "0 0 6px", fontSize: 13, fontWeight: 600, color: "#18181b" }}>Breakdown</p>
+                                <p style={{ margin: 0, fontSize: 13, color: "#52525b", lineHeight: 1.65 }}>
+                                  From the call: Gabriel relies heavily on Discord for school and startup coordination, so social and work communications are intertwined. He describes being &quot;attached&quot; to his computer — focus and distraction both happen on the same device. He has tried screen-time and limiting apps but stopped using them; existing tools feel either too blunt or too easy to bypass. Key opportunity: support that lives inside the same devices (e.g. friction or status broadcast) rather than asking for less screen time overall.
                                 </p>
                               </div>
                             </div>
-                          </div>
+                          ) : (
+                            <>
+                              <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 8 }}>
+                                {iv.observations.map((o, i) => (
+                                  <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                                    <span style={{ color: "#a1a1aa", flexShrink: 0, marginTop: 2 }}>—</span>
+                                    <span style={{ fontSize: 14, color: "#52525b", lineHeight: 1.6 }}>{o}</span>
+                                  </div>
+                                ))}
+                              </div>
+
+                              {/* Photo documentation */}
+                              <div style={{ marginTop: 20, paddingTop: 20, borderTop: "1px solid #f4f4f5" }}>
+                                <SectionLabel>Photo Documentation</SectionLabel>
+                                <div style={{ marginTop: 10, border: "1px solid #e4e4e7", borderRadius: 10, overflow: "hidden" }}>
+                                  <div style={{ background: "#fafafa", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 220, position: "relative" }}>
+                                    <img
+                                      src="https://i.imgur.com/WqesFlP.jpeg"
+                                      alt="Participant observed touching hair during interview"
+                                      onError={e => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
+                                      style={{ width: "100%", maxHeight: 340, objectFit: "cover", display: "block" }}
+                                    />
+                                    <div style={{ display: "none", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, padding: 40, color: "#a1a1aa", fontSize: 13, textAlign: "center" }}>
+                                      <span style={{ fontSize: 28 }}>📷</span>
+                                      <span>Replace <code>REPLACE_WITH_HOSTED_IMAGE_URL</code> with your hosted image link</span>
+                                    </div>
+                                  </div>
+                                  <div style={{ padding: "12px 16px", background: "#fff", borderTop: "1px solid #f4f4f5" }}>
+                                    <p style={{ margin: "0 0 4px", fontSize: 13, fontWeight: 600, color: "#18181b" }}>
+                                      Participant touches hair and avoids eye contact mid-response
+                                    </p>
+                                    <p style={{ margin: 0, fontSize: 13, color: "#71717a", lineHeight: 1.6 }}>
+                                      <strong>Breakdown / Opportunity:</strong> Physical self-soothing behavior (hair-touching, gaze aversion) appeared consistently during cognitively loaded responses — suggesting stress and cognitive load manifest physically before users consciously register them. This points to an opportunity for ambient, body-signal-based stress detection rather than self-reported check-ins.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          )}
                         </Card>
                       )}
                     </>
