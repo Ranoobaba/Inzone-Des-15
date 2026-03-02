@@ -555,8 +555,8 @@ export default function App() {
                                 <div style={{ marginTop: 10, border: "1px solid #e4e4e7", borderRadius: 10, overflow: "hidden" }}>
                                   <div style={{ background: "#fafafa", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 220, position: "relative" }}>
                                     <img
-                                      src="https://i.imgur.com/WqesFlP.jpeg"
-                                      alt="Participant observed touching hair during interview"
+                                      src={iv.participant === "Hamza" ? "/hamza-interview.png" : "https://i.imgur.com/WqesFlP.jpeg"}
+                                      alt={iv.participant === "Hamza" ? "Hamza interview call screenshot" : "Participant observed touching hair during interview"}
                                       onError={e => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
                                       style={{ width: "100%", maxHeight: 340, objectFit: "cover", display: "block" }}
                                     />
@@ -567,10 +567,20 @@ export default function App() {
                                   </div>
                                   <div style={{ padding: "12px 16px", background: "#fff", borderTop: "1px solid #f4f4f5" }}>
                                     <p style={{ margin: "0 0 4px", fontSize: 13, fontWeight: 600, color: "#18181b" }}>
-                                      Participant touches hair and avoids eye contact mid-response
+                                      {iv.participant === "Hamza"
+                                        ? "Remote video call between Meshal and Hamza during the interview"
+                                        : "Participant touches hair and avoids eye contact mid-response"}
                                     </p>
                                     <p style={{ margin: 0, fontSize: 13, color: "#71717a", lineHeight: 1.6 }}>
-                                      <strong>Breakdown / Opportunity:</strong> Physical self-soothing behavior (hair-touching, gaze aversion) appeared consistently during cognitively loaded responses — suggesting stress and cognitive load manifest physically before users consciously register them. This points to an opportunity for ambient, body-signal-based stress detection rather than self-reported check-ins.
+                                      {iv.participant === "Hamza" ? (
+                                        <>
+                                          <strong>Breakdown / Opportunity:</strong> Screenshot captures Hamza in his everyday digital workspace during a remote interview. The setting reinforces how much of his academic and personal life happens through his laptop, making it clear that any intervention to reduce dependence or distraction has to live within his existing device habits rather than pull him away from them.
+                                        </>
+                                      ) : (
+                                        <>
+                                          <strong>Breakdown / Opportunity:</strong> Physical self-soothing behavior (hair-touching, gaze aversion) appeared consistently during cognitively loaded responses — suggesting stress and cognitive load manifest physically before users consciously register them. This points to an opportunity for ambient, body-signal-based stress detection rather than self-reported check-ins.
+                                        </>
+                                      )}
                                     </p>
                                   </div>
                                 </div>
