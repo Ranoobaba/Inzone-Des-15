@@ -87,13 +87,60 @@ const interviewees = [
     ],
   },
   {
-    interviewer: "Meshal Alothra",
-    participant: "Participant 2",
-    status: "pending",
-    background: "Interview pending.",
-    responses: [],
-    observations: [],
-  },
+   interviewer: "Meshal Alothra",
+    participant: "Hamza",
+    status: "complete",
+    background: "Use this template to record Participant 2's interview.",
+    responses: [
+      {
+        q: "Tell me a bit about yourself and what your typical day looks like in terms of school and work.",
+        a: "I’m a junior at UC Berkeley from Saudi Arabia studying psychology and data science. My days are split between classes, studying, hobbies, and sports. I stay busy, and most of my academic and personal tasks involve using my phone or laptop.",
+        breakdown: "Participant balances academics, hobbies, and athletics, creating a full schedule. Digital devices are central to both productivity and leisure, making it hard to disconnect.",
+      },
+      {
+        q: "How often are you using electronic devices when you're studying or working?",
+        a: "Almost all the time — pretty much everything except sports involves my laptop or phone.",
+        breakdown: "Device use is unavoidable for school and daily tasks. Any change would need to work within device use, not eliminate it.",
+      },
+      {
+        q: "How would you describe your relationship with digital devices overall?",
+        a: "It started as something I used when I was bored, but it became a habit. Now it’s the first thing I check when I wake up. It feels like a comfort space, but I don’t like how dependent I’ve become.",
+        breakdown: "There’s comfort and convenience, but also growing awareness of dependency. The relationship feels habitual rather than intentional.",
+      },
+      {
+        q: "Do you like your current relationship with social media, and if not, what is one thing you wish you could change about it?",
+        a: "I mostly use Instagram. I don’t like my current relationship with it — I spend too much time on my phone. I wish I could reduce my reliance and better control the content I see.",
+        breakdown: "Social media is both entertainment and distraction. Participant wants moderation and more control over exposure to content.",
+      },
+      {
+        q: "If you had to estimate, how much of your day involves digital devices and social media?",
+        a: "Around five to six hours a day.",
+        breakdown: "Usage is consistently high, forming a significant portion of daily life.",
+      },
+      {
+        q: "Does social media ever get in the way of your work? If so, how?",
+        a: "Yes. It’s not part of my work, so when I’m on it, I’m not being productive.",
+        breakdown: "Distraction is mainly time loss rather than anxiety. Social media directly competes with focused work time.",
+      },
+      {
+        q: "What, if anything, would you like to change about your relationship with your phone and social media?",
+        a: "I want to be less reliant on it and better regulate how much I use it and what content I consume.",
+        breakdown: "Participant wants both usage limits and content filtering — not just less time, but healthier engagement.",
+      },
+      {
+        q: "Would you say that you feel anxiety when using electronic devices like phones or computers, and if so, why?",
+        a: "No, not really.",
+        breakdown: "There’s no direct anxiety during use; the concern is more about dependency and productivity.",
+      },
+      {
+        q: "Is there anything we didn't talk about today that you would like to share before we wrap up?",
+        a: "No.",
+        breakdown: "No additional concerns beyond device dependency and moderation.",
+      },
+    ],
+    observations: [
+      "What really stands out is that his relationship with his phone isn’t toxic, it’s just habit. It’s not that he hates using it or feels anxious while scrolling — it has simply become the default. When he’s bored, tired, or just waking up, his phone is the first thing he reaches for without even thinking.",
+    ],
   {
     interviewer: "Aryan Nagpal",
     participant: "Gabriel Ryan Turner",
