@@ -138,9 +138,10 @@ const interviewees = [
         breakdown: "No additional concerns beyond device dependency and moderation.",
       },
     ],
-    observations: [
+      observations: [
       "What really stands out is that his relationship with his phone isn’t toxic, it’s just habit. It’s not that he hates using it or feels anxious while scrolling — it has simply become the default. When he’s bored, tired, or just waking up, his phone is the first thing he reaches for without even thinking.",
     ],
+  },
   {
     interviewer: "Aryan Nagpal",
     participant: "Gabriel Ryan Turner",
