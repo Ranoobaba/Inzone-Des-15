@@ -90,7 +90,7 @@ const interviewees = [
    interviewer: "Meshal Alothra",
     participant: "Hamza",
     status: "complete",
-    background: "Use this template to record Participant 2's interview.",
+    background: "Hamza is a junior at UC Berkeley from Jeddah, Saudi Arabia, studying psychology and data science. In addition to managing a demanding academic workload, he is a Taekwondo champion and competes on the university team.",
     responses: [
       {
         q: "Tell me a bit about yourself and what your typical day looks like in terms of school and work.",
