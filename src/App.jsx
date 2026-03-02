@@ -90,11 +90,70 @@ const interviewees = [
   },
   {
     interviewer: "Aryan Nagpal",
-    participant: "Participant 3",
-    status: "pending",
-    background: "Interview pending.",
-    responses: [],
-    observations: [],
+    participant: "Gabriel Ryan Turner",
+    status: "complete",
+    background:
+      "First-year mechanical engineering student at UC Berkeley, from Orange County, California, exploring a specialization in medical technology.",
+    responses: [
+      {
+        q: "Tell me a bit about yourself and what your typical day looks like in terms of school and work.",
+        a: "Gabriel Ryan Turner: I’m from Millville, Kentucky, and I’m studying industrial engineering — I’m a freshman. I’m working on different AI projects for a startup, meeting with teammates on a bi-weekly basis and using tools like VS Code and Render. On top of that I’m maintaining my schoolwork and constantly checking emails. I procrastinate a little, so my days can feel pretty sporadic.",
+        breakdown:
+          "Participant juggles a demanding academic schedule with an early-stage startup, producing a high and sometimes chaotic cognitive load. Digital tools are central to both domains, making it hard to find clear separation between \"on\" and \"off\" time.",
+      },
+      {
+        q: "How often are you using electronic devices when you’re studying or working?",
+        a: "All the time — I’m pretty much attached to my computer.",
+        breakdown:
+          "Work and study are effectively inseparable from device use. Any intervention has to acknowledge that \"less screen\" is not realistic; instead, support must live within the same devices that create the overload.",
+      },
+      {
+        q: "How would you describe your relationship with digital devices overall?",
+        a: "Generally pretty positive — they allow me to do quite a lot. I’d like to be able to separate myself a little more, but overall it’s good.",
+        breakdown:
+          "There is a tension between appreciation and overreliance: devices are empowering but also hard to step away from. The participant acknowledges the benefits of digital tools while wanting a bit more separation from them.",
+      },
+      {
+        q: "Do you like your current relationship with social media, and if not, what is one thing you wish you could change about it?",
+        a: "I use Instagram and LinkedIn, and we do a lot of organizing through Discord. I think my relationship with social media is okay, but I spend too much time on my phone. I’ve looked at some apps to limit screen time, but not much has really worked. I wish that I could just, like, put out notifications — or have a platform that could lock things down and send a status across different platforms when I’m trying not to be on my phone.",
+        breakdown:
+          "Social media is both social infrastructure (Discord for coordination) and a source of overuse. Previous attempts with screen-time tools have failed to stick, and the participant explicitly wishes for a way to both lock apps down and broadcast a \"do not disturb\" status across platforms.",
+      },
+      {
+        q: "If you had to estimate, how much of your day involves digital devices and social media?",
+        a: "On a good day, maybe around 3 hours. On a bad day, it can feel like the whole day.",
+        breakdown:
+          "Usage swings dramatically from moderate to extreme, indicating weak or unstable boundaries. Any tool that helps has to adapt to these swings rather than assuming a fixed \"normal\" day.",
+      },
+      {
+        q: "Does social media ever get in the way of your work? If so, how?",
+        a: "Yes, it does. It’s not always just doomscrolling — it’s also people messaging me and feeling obligated to reply.",
+        breakdown:
+          "Distraction isn’t only passive scrolling; it’s also the social obligation layer of messaging. Interventions must account for the pressure to respond, not just reduce content consumption.",
+      },
+      {
+        q: "What, if anything, would you like to change about your relationship with your phone and social media?",
+        a: "I wish I could just put out notifications or have a platform that could lock things down and send a status across different platforms — something that tells people when I’m trying not to be on my phone.",
+        breakdown:
+          "Participant wants two things: stronger friction around access (\"lock down\") and cross-platform social signaling (so others know not to expect instant replies). This points toward solutions that combine behavior shaping with status broadcasting.",
+      },
+      {
+        q: "Would you say that you feel anxiety when using electronic devices like phones or computers, and if so, why?",
+        a: "I don’t really feel anxious while I’m using them, but I do feel anxious when I know I’ve spent too much time on them.",
+        breakdown:
+          "Emotional cost shows up as guilt or anxiety after overuse, not as a real-time signal. A helpful system could surface gentle feedback earlier, before the regret phase.",
+      },
+      {
+        q: "Is there anything we didn’t talk about today that you would like to share before we wrap up?",
+        a: "No.",
+        breakdown: "Participant did not have additional comments beyond what was already discussed in the interview.",
+      },
+    ],
+    observations: [
+      "Relies heavily on Discord for organizing school and startup work, reinforcing that social and work communications are intertwined.",
+      "Describes himself as \"attached\" to his computer, suggesting that focus and distraction both occur on the same primary device.",
+      "Has explored screen time limiting apps but abandoned them, indicating that existing tools feel either too blunt or too easy to bypass.",
+    ],
   },
 ];
 
@@ -386,32 +445,50 @@ export default function App() {
                             ))}
                           </div>
 
-                          {/* Photo documentation */}
-                          <div style={{ marginTop: 20, paddingTop: 20, borderTop: "1px solid #f4f4f5" }}>
-                            <SectionLabel>Photo Documentation</SectionLabel>
-                            <div style={{ marginTop: 10, border: "1px solid #e4e4e7", borderRadius: 10, overflow: "hidden" }}>
-                              <div style={{ background: "#fafafa", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 220, position: "relative" }}>
-                                <img
-                                  src="https://i.imgur.com/WqesFlP.jpeg"
-                                  alt="Participant observed touching hair during interview"
-                                  onError={e => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
-                                  style={{ width: "100%", maxHeight: 340, objectFit: "cover", display: "block" }}
-                                />
-                                <div style={{ display: "none", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, padding: 40, color: "#a1a1aa", fontSize: 13, textAlign: "center" }}>
-                                  <span style={{ fontSize: 28 }}>📷</span>
-                                  <span>Replace <code>REPLACE_WITH_HOSTED_IMAGE_URL</code> with your hosted image link</span>
+                          {/* Media documentation per participant */}
+                          {iv.participant === "Muhammed" && (
+                            <div style={{ marginTop: 20, paddingTop: 20, borderTop: "1px solid #f4f4f5" }}>
+                              <SectionLabel>Photo Documentation</SectionLabel>
+                              <div style={{ marginTop: 10, border: "1px solid #e4e4e7", borderRadius: 10, overflow: "hidden" }}>
+                                <div style={{ background: "#fafafa", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 220, position: "relative" }}>
+                                  <img
+                                    src="https://i.imgur.com/WqesFlP.jpeg"
+                                    alt="Participant observed touching hair during interview"
+                                    onError={e => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
+                                    style={{ width: "100%", maxHeight: 340, objectFit: "cover", display: "block" }}
+                                  />
+                                  <div style={{ display: "none", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, padding: 40, color: "#a1a1aa", fontSize: 13, textAlign: "center" }}>
+                                    <span style={{ fontSize: 28 }}>📷</span>
+                                    <span>Replace <code>REPLACE_WITH_HOSTED_IMAGE_URL</code> with your hosted image link</span>
+                                  </div>
+                                </div>
+                                <div style={{ padding: "12px 16px", background: "#fff", borderTop: "1px solid #f4f4f5" }}>
+                                  <p style={{ margin: "0 0 4px", fontSize: 13, fontWeight: 600, color: "#18181b" }}>
+                                    Participant touches hair and avoids eye contact mid-response
+                                  </p>
+                                  <p style={{ margin: 0, fontSize: 13, color: "#71717a", lineHeight: 1.6 }}>
+                                    <strong>Breakdown / Opportunity:</strong> Physical self-soothing behavior (hair-touching, gaze aversion) appeared consistently during cognitively loaded responses — suggesting stress and cognitive load manifest physically before users consciously register them. This points to an opportunity for ambient, body-signal-based stress detection rather than self-reported check-ins.
+                                  </p>
                                 </div>
                               </div>
-                              <div style={{ padding: "12px 16px", background: "#fff", borderTop: "1px solid #f4f4f5" }}>
-                                <p style={{ margin: "0 0 4px", fontSize: 13, fontWeight: 600, color: "#18181b" }}>
-                                  Participant touches hair and avoids eye contact mid-response
-                                </p>
-                                <p style={{ margin: 0, fontSize: 13, color: "#71717a", lineHeight: 1.6 }}>
-                                  <strong>Breakdown / Opportunity:</strong> Physical self-soothing behavior (hair-touching, gaze aversion) appeared consistently during cognitively loaded responses — suggesting stress and cognitive load manifest physically before users consciously register them. This points to an opportunity for ambient, body-signal-based stress detection rather than self-reported check-ins.
+                            </div>
+                          )}
+
+                          {iv.participant === "Gabriel Ryan Turner" && (
+                            <div style={{ marginTop: 20, paddingTop: 20, borderTop: "1px solid #f4f4f5" }}>
+                              <SectionLabel>Field Audio</SectionLabel>
+                              <div style={{ marginTop: 10, border: "1px solid #e4e4e7", borderRadius: 10, overflow: "hidden", padding: 16, background: "#fafafa" }}>
+                                <audio controls style={{ width: "100%" }}>
+                                  <source src="/Call%20with%20Gabriel%20Turner.m4a" type="audio/mp4" />
+                                  <source src="/Call%20with%20Gabriel%20Turner.m4a" type="audio/m4a" />
+                                  Your browser does not support the audio element.
+                                </audio>
+                                <p style={{ margin: "8px 0 0", fontSize: 13, color: "#71717a", lineHeight: 1.6 }}>
+                                  Audio recording of the full interview with Gabriel Ryan Turner.
                                 </p>
                               </div>
                             </div>
-                          </div>
+                          )}
                         </Card>
                       )}
                     </>
