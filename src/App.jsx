@@ -169,8 +169,8 @@ function ImageSlot({ src, alt, className = "" }) {
 function StatNumber({ value, label }) {
   return (
     <div className="text-center">
-      <div className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">{value}</div>
-      <div className="text-xs sm:text-sm text-white/35 mt-2 font-medium tracking-wide uppercase">{label}</div>
+      <div className="text-4xl sm:text-5xl font-extrabold text-white">{value}</div>
+      <div className="text-xs sm:text-sm text-white/60 mt-2 font-medium tracking-wide uppercase">{label}</div>
     </div>
   );
 }
@@ -217,7 +217,7 @@ export default function App() {
       <header className="glass sticky top-0 z-50 border-b border-zinc-200/60">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
           <button onClick={() => navigate("Overview")} className="flex items-center gap-3 cursor-pointer group">
-            <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-violet-600 shadow-lg shadow-brand-500/25">
+            <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-purple-700 to-violet-600 shadow-lg shadow-brand-500/25">
               <span className="text-xs font-extrabold text-white tracking-tight">IN</span>
             </div>
             <div className="hidden sm:block">
@@ -257,18 +257,17 @@ export default function App() {
 
       {/* ═══════════ OVERVIEW HERO (full-width, outside max-w container) ═══════════ */}
       {active === "Overview" && (
-        <div className="relative overflow-hidden bg-gradient-to-b from-[#0f0a2e] via-brand-950 to-[#1a0a3e] text-white noise animate-fade-in">
-          <div className="absolute top-[-200px] right-[-100px] w-[700px] h-[700px] rounded-full bg-brand-500/15 blur-[160px] animate-glow-pulse" />
-          <div className="absolute bottom-[-100px] left-[-100px] w-[500px] h-[500px] rounded-full bg-violet-500/10 blur-[140px] animate-glow-pulse" style={{ animationDelay: "2s" }} />
-          <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-brand-400/5 blur-[100px]" />
+        <div className="relative overflow-hidden bg-[#2d0a4e] text-white animate-fade-in">
+          <div className="absolute top-[-150px] right-[-50px] w-[600px] h-[600px] rounded-full bg-purple-500/30 blur-[120px]" />
+          <div className="absolute bottom-[-80px] left-[-80px] w-[400px] h-[400px] rounded-full bg-violet-400/20 blur-[100px]" />
           <div className="relative mx-auto max-w-4xl px-6 pt-24 pb-20 sm:pt-36 sm:pb-28 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.07] border border-white/[0.08] backdrop-blur-sm px-4 py-1.5 mb-8">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-glow-pulse" />
-              <span className="text-[12px] font-medium text-white/70 tracking-wide">Needfinding + Prototyping · DES 15</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-4 py-1.5 mb-8">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="text-[12px] font-medium text-white/80 tracking-wide">Needfinding + Prototyping · DES 15</span>
             </div>
-            <h1 className="text-6xl sm:text-8xl font-extrabold tracking-tight mb-6 leading-[1.05] bg-gradient-to-b from-white via-white to-white/50 bg-clip-text text-transparent">INZONE</h1>
-            <p className="mx-auto max-w-2xl text-lg sm:text-xl leading-relaxed text-white/50 mb-12">
-              Understanding how people with ADHD manage focus and stress — and designing solutions that work <em className="text-white/70 not-italic font-medium">with</em> their habits, not against them.
+            <h1 className="text-6xl sm:text-8xl font-extrabold tracking-tight mb-6 leading-[1.05] text-white">INZONE</h1>
+            <p className="mx-auto max-w-2xl text-lg sm:text-xl leading-relaxed text-white/75 mb-12">
+              Understanding how people with ADHD manage focus and stress — and designing solutions that work <em className="text-white not-italic font-semibold">with</em> their habits, not against them.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 max-w-lg sm:max-w-2xl mx-auto">
               <StatNumber value="3" label="Interviews" />
@@ -277,11 +276,11 @@ export default function App() {
               <StatNumber value="3" label="Prototypes" />
             </div>
             <div className="mt-14 flex flex-wrap items-center justify-center gap-3">
-              <button onClick={() => navigate("Research Plan")} className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-brand-700 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30 hover:scale-[1.03] transition-all cursor-pointer">
+              <button onClick={() => navigate("Research Plan")} className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-purple-800 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/40 hover:scale-[1.03] transition-all cursor-pointer">
                 Explore Our Research
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
               </button>
-              <button onClick={() => navigate("Hi-fi Prototypes")} className="inline-flex items-center gap-2 rounded-xl bg-white/10 border border-white/10 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-white/80 hover:bg-white/15 hover:text-white transition-all cursor-pointer">
+              <button onClick={() => navigate("Hi-fi Prototypes")} className="inline-flex items-center gap-2 rounded-xl bg-white/15 border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/25 transition-all cursor-pointer">
                 View Prototypes
               </button>
             </div>
@@ -302,7 +301,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-600 to-violet-600 px-8 py-8 sm:px-12 sm:py-10 shadow-xl shadow-brand-500/15 text-center">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-700 to-violet-600 px-8 py-8 sm:px-12 sm:py-10 shadow-xl shadow-brand-500/15 text-center">
               <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.12)_0%,transparent_50%)]" />
               <div className="relative">
                 <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/50 mb-3">Selected Research Question</div>
@@ -317,7 +316,7 @@ export default function App() {
               <div className="grid gap-4 sm:grid-cols-3">
                 {["What is the relationship between daily screen time and academic productivity among college students with ADHD?", "What coping strategies do people with attention difficulties use to manage digital distractions, and which ones are most effective?", "How does the frequency of phone notifications impact stress levels and emotional regulation in individuals with ADHD?"].map((rq, i) => (
                   <GlowCard key={i} className={`animate-fade-in-slow stagger-${i + 1}`}>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-violet-600 text-xs font-bold text-white mb-4 shadow-sm">{i + 1}</span>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 text-xs font-bold text-white mb-4 shadow-sm">{i + 1}</span>
                     <p className="text-sm text-zinc-600 leading-relaxed">{rq}</p>
                   </GlowCard>
                 ))}
@@ -328,7 +327,7 @@ export default function App() {
               <Card hover className="relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 rounded-full bg-brand-100/40 blur-2xl" />
                 <div className="relative">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-violet-600 mb-4 shadow-lg shadow-brand-500/20">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 mb-4 shadow-lg shadow-brand-500/20">
                     <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
                   </div>
                   <SectionLabel>Problem Space</SectionLabel>
@@ -338,14 +337,14 @@ export default function App() {
               <Card hover className="relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 rounded-full bg-violet-100/40 blur-2xl" />
                 <div className="relative">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-violet-600 mb-4 shadow-lg shadow-brand-500/20">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 mb-4 shadow-lg shadow-brand-500/20">
                     <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg>
                   </div>
                   <SectionLabel>Team</SectionLabel>
                   <div className="mt-3 space-y-2.5">
                     {team.map(t => (
                       <div key={t.name} className="flex items-center gap-3 rounded-xl bg-zinc-50/80 border border-zinc-100 px-3 py-2.5">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-600 to-violet-600 text-[11px] font-bold text-white shadow-sm">{t.initials}</div>
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purple-700 to-violet-600 text-[11px] font-bold text-white shadow-sm">{t.initials}</div>
                         <div>
                           <div className="text-sm font-semibold text-zinc-800">{t.name}</div>
                           <div className="text-[11px] text-zinc-400">{t.role}</div>
@@ -515,7 +514,7 @@ export default function App() {
               <div className="mt-4 space-y-4">
                 {["Users rationalize distraction as logical — making hard blocks ineffective and friction-based design essential.", "Stress awareness is almost always retrospective — users rarely know they are overwhelmed until after the fact.", "Re-entry cost after breaks is a hidden and underserved pain point — the mental effort to rebuild context prevents people from resuming work."].map((text, i) => (
                   <div key={i} className="flex gap-4 items-start">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-violet-600 text-xs font-bold text-white shrink-0 shadow-sm">{i + 1}</span>
+                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-purple-700 to-violet-600 text-xs font-bold text-white shrink-0 shadow-sm">{i + 1}</span>
                     <p className="text-[15px] leading-relaxed text-zinc-600">{text}</p>
                   </div>
                 ))}
@@ -532,7 +531,7 @@ export default function App() {
               {insights.map((insight, i) => (
                 <GlowCard key={i} className={`animate-fade-in stagger-${i + 1}`}>
                   <div className="flex gap-5 items-start">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-violet-600 shrink-0 shadow-lg shadow-brand-500/20">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 shrink-0 shadow-lg shadow-brand-500/20">
                       <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d={insight.icon} /></svg>
                     </div>
                     <div>
@@ -568,8 +567,8 @@ export default function App() {
                   <p className="text-[15px] leading-relaxed text-zinc-600">The inability to sustain focus leads to chronic stress, reduced output, and a persistent sense of failure. Because the connection between phone habits and stress is invisible in real time, users remain in recurring cycles of distraction, guilt, and avoidance.</p>
                 </Card>
               </div>
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0f0a2e] via-brand-950 to-[#1a0a3e] px-8 py-12 text-center noise">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-brand-500/15 blur-[100px] animate-glow-pulse" />
+              <div className="relative overflow-hidden rounded-2xl bg-[#2d0a4e] px-8 py-12 text-center">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-purple-500/25 blur-[100px]" />
                 <div className="relative">
                   <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/40 mb-5">How Might We</div>
                   <p className="mx-auto max-w-2xl text-xl sm:text-2xl font-bold leading-relaxed text-white">&ldquo;How might we help people with attention difficulties recognize the real-time relationship between their phone habits and their stress — so they can make more intentional choices throughout the day?&rdquo;</p>
@@ -590,7 +589,7 @@ export default function App() {
                   <p className="text-[15px] font-medium leading-relaxed text-zinc-600 italic">&ldquo;How might we help people with attention difficulties recognize the real-time relationship between their phone habits and their stress — so they can make more intentional choices throughout the day?&rdquo;</p>
                 </div>
                 <SectionLabel>&ldquo;How Might We...?&rdquo; Statement After Prototyping</SectionLabel>
-                <div className="mt-3 relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-600 to-violet-600 px-5 py-4 mb-8 shadow-lg shadow-brand-500/15">
+                <div className="mt-3 relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-5 py-4 mb-8 shadow-lg shadow-brand-500/15">
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
                   <p className="relative text-[15px] font-medium leading-relaxed text-white">&ldquo;How might we assist our users in lowering their stress levels caused by phone apps like social media platforms, specifically in a way that incentivizes less time on said apps for their own well-being while still making the assistance attractive towards the users?&rdquo;</p>
                 </div>
@@ -674,7 +673,7 @@ export default function App() {
             <div className="space-y-8">
               <Card>
                 <SectionLabel>Revisited &ldquo;How Might We...?&rdquo; Statement</SectionLabel>
-                <div className="mt-3 relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-600 to-violet-600 px-5 py-4 mb-5 shadow-lg shadow-brand-500/15">
+                <div className="mt-3 relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-5 py-4 mb-5 shadow-lg shadow-brand-500/15">
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
                   <p className="relative text-[15px] font-medium leading-relaxed text-white">&ldquo;How might we assist our users in lowering their stress levels caused by phone apps like social media platforms, specifically in a way that incentivizes less time on said apps for their own well-being while still making the assistance attractive towards the users?&rdquo;</p>
                 </div>
@@ -695,7 +694,7 @@ export default function App() {
                     </div>
                     <p className="text-sm text-zinc-500 leading-relaxed mb-5">{proto.description}</p>
                     {proto.liveUrl && (
-                      <a href={proto.liveUrl} target="_blank" rel="noopener noreferrer" className="relative overflow-hidden group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-brand-600 to-violet-600 px-6 py-4 text-white shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30 hover:scale-[1.02] transition-all">
+                      <a href={proto.liveUrl} target="_blank" rel="noopener noreferrer" className="relative overflow-hidden group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-6 py-4 text-white shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30 hover:scale-[1.02] transition-all">
                         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
                         <div className="relative flex items-center gap-3">
                           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
@@ -719,7 +718,7 @@ export default function App() {
 
       <footer className="border-t border-zinc-200/60 bg-white/80 py-8 text-center">
         <div className="flex items-center justify-center gap-2 mb-2">
-          <div className="h-5 w-5 rounded-md bg-gradient-to-br from-brand-600 to-violet-600 flex items-center justify-center"><span className="text-[7px] font-extrabold text-white">IN</span></div>
+          <div className="h-5 w-5 rounded-md bg-gradient-to-br from-purple-700 to-violet-600 flex items-center justify-center"><span className="text-[7px] font-extrabold text-white">IN</span></div>
           <span className="text-sm font-bold text-zinc-800">INZONE</span>
         </div>
         <span className="text-[13px] text-zinc-400">DES 15 · Meshal Alothra, Rayyan Ali, Aryan Nagpal</span>
