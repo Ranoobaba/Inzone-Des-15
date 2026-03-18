@@ -169,8 +169,8 @@ function ImageSlot({ src, alt, className = "" }) {
 function StatNumber({ value, label }) {
   return (
     <div className="text-center">
-      <div className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent">{value}</div>
-      <div className="text-xs sm:text-sm text-white/40 mt-1 font-medium">{label}</div>
+      <div className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">{value}</div>
+      <div className="text-xs sm:text-sm text-white/35 mt-2 font-medium tracking-wide uppercase">{label}</div>
     </div>
   );
 }
@@ -255,67 +255,104 @@ export default function App() {
         )}
       </header>
 
-      <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16" key={active}>
+      {/* ═══════════ OVERVIEW HERO (full-width, outside max-w container) ═══════════ */}
+      {active === "Overview" && (
+        <div className="relative overflow-hidden bg-gradient-to-b from-[#0f0a2e] via-brand-950 to-[#1a0a3e] text-white noise animate-fade-in">
+          <div className="absolute top-[-200px] right-[-100px] w-[700px] h-[700px] rounded-full bg-brand-500/15 blur-[160px] animate-glow-pulse" />
+          <div className="absolute bottom-[-100px] left-[-100px] w-[500px] h-[500px] rounded-full bg-violet-500/10 blur-[140px] animate-glow-pulse" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-brand-400/5 blur-[100px]" />
+          <div className="relative mx-auto max-w-4xl px-6 pt-24 pb-20 sm:pt-36 sm:pb-28 text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.07] border border-white/[0.08] backdrop-blur-sm px-4 py-1.5 mb-8">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-glow-pulse" />
+              <span className="text-[12px] font-medium text-white/70 tracking-wide">Needfinding + Prototyping · DES 15</span>
+            </div>
+            <h1 className="text-6xl sm:text-8xl font-extrabold tracking-tight mb-6 leading-[1.05] bg-gradient-to-b from-white via-white to-white/50 bg-clip-text text-transparent">INZONE</h1>
+            <p className="mx-auto max-w-2xl text-lg sm:text-xl leading-relaxed text-white/50 mb-12">
+              Understanding how people with ADHD manage focus and stress — and designing solutions that work <em className="text-white/70 not-italic font-medium">with</em> their habits, not against them.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 max-w-lg sm:max-w-2xl mx-auto">
+              <StatNumber value="3" label="Interviews" />
+              <StatNumber value="5" label="Insights" />
+              <StatNumber value="4" label="Themes" />
+              <StatNumber value="3" label="Prototypes" />
+            </div>
+            <div className="mt-14 flex flex-wrap items-center justify-center gap-3">
+              <button onClick={() => navigate("Research Plan")} className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-brand-700 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30 hover:scale-[1.03] transition-all cursor-pointer">
+                Explore Our Research
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+              </button>
+              <button onClick={() => navigate("Hi-fi Prototypes")} className="inline-flex items-center gap-2 rounded-xl bg-white/10 border border-white/10 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-white/80 hover:bg-white/15 hover:text-white transition-all cursor-pointer">
+                View Prototypes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <main className={`mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 ${active === "Overview" ? "pt-0 sm:pt-0" : ""}`} key={active}>
 
         {/* ═══════════ OVERVIEW ═══════════ */}
         {active === "Overview" && (
-          <div className="space-y-8 animate-fade-in">
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0f0a2e] via-brand-950 to-[#1a0a3e] px-8 py-16 sm:px-14 sm:py-24 text-white noise">
-              <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-brand-500/20 blur-[120px] animate-glow-pulse" />
-              <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-violet-500/15 blur-[100px] animate-glow-pulse" style={{ animationDelay: "2s" }} />
+          <div className="space-y-10 animate-fade-in">
+
+            <div className="text-center max-w-3xl mx-auto pt-8">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 mb-4">Why This Research Matters</h2>
+              <p className="text-base sm:text-lg text-zinc-500 leading-relaxed">
+                Each of us has personally experienced the frustration of losing focus — and turning to our phones without fully understanding why. We wanted to explore this deeply familiar yet poorly understood space.
+              </p>
+            </div>
+
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-600 to-violet-600 px-8 py-8 sm:px-12 sm:py-10 shadow-xl shadow-brand-500/15 text-center">
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.12)_0%,transparent_50%)]" />
               <div className="relative">
-                <Badge className="bg-white/10 text-white/80 border border-white/10 backdrop-blur-sm mb-5">Needfinding + Prototyping</Badge>
-                <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-5 leading-[1.1]">INZONE</h1>
-                <p className="max-w-lg text-lg leading-relaxed text-white/60">
-                  Understanding how people with ADHD manage focus and stress — and designing solutions that work with their habits, not against them.
-                </p>
-                <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 max-w-md sm:max-w-none">
-                  <StatNumber value="3" label="Interviews" />
-                  <StatNumber value="5" label="Insights" />
-                  <StatNumber value="4" label="Themes" />
-                  <StatNumber value="3" label="Prototypes" />
-                </div>
+                <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/50 mb-3">Selected Research Question</div>
+                <p className="text-lg sm:text-xl font-semibold leading-relaxed text-white max-w-3xl mx-auto">&ldquo;How do people with ADHD manage stress and focus, and how does phone and screen use affect those experiences throughout the day?&rdquo;</p>
               </div>
             </div>
 
-            <Card>
-              <SectionLabel>Why We Chose This Area</SectionLabel>
-              <p className="text-[15px] leading-[1.8] text-zinc-600 mb-8">
-                Each of us has personally experienced the frustration of losing focus — whether during lectures, study sessions, or deep work — and turning to our phones without fully understanding why. We wanted to explore this space because it felt deeply familiar yet poorly understood: the relationship between attention difficulties, stress, and the digital habits that quietly shape both.
-              </p>
-              <SectionLabel>Research Questions We Considered</SectionLabel>
-              <div className="mt-3 space-y-2 mb-8">
+            <div>
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-zinc-800">Research Questions We Considered</h3>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-3">
                 {["What is the relationship between daily screen time and academic productivity among college students with ADHD?", "What coping strategies do people with attention difficulties use to manage digital distractions, and which ones are most effective?", "How does the frequency of phone notifications impact stress levels and emotional regulation in individuals with ADHD?"].map((rq, i) => (
-                  <div key={i} className="flex gap-3 items-start rounded-xl bg-zinc-50/80 px-4 py-3 border border-zinc-100">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-md bg-zinc-200/60 text-[10px] font-bold text-zinc-500 shrink-0 mt-0.5">{i + 1}</span>
-                    <span className="text-sm text-zinc-600 leading-relaxed">{rq}</span>
-                  </div>
+                  <GlowCard key={i} className={`animate-fade-in-slow stagger-${i + 1}`}>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-violet-600 text-xs font-bold text-white mb-4 shadow-sm">{i + 1}</span>
+                    <p className="text-sm text-zinc-600 leading-relaxed">{rq}</p>
+                  </GlowCard>
                 ))}
               </div>
-              <SectionLabel>Selected Research Question</SectionLabel>
-              <div className="mt-3 relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-600 to-violet-600 px-6 py-5 shadow-lg shadow-brand-500/15">
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
-                <p className="relative text-[15px] font-medium leading-relaxed text-white">How do people with ADHD manage stress and focus, and how does phone and screen use affect those experiences throughout the day?</p>
-              </div>
-            </Card>
+            </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Card hover>
-                <SectionLabel>Problem Space</SectionLabel>
-                <p className="text-[15px] leading-relaxed text-zinc-600">People with ADHD experience elevated stress from frequent digital distractions — often without realizing the connection between their habits and their mental state.</p>
+            <div className="grid gap-6 sm:grid-cols-2">
+              <Card hover className="relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 rounded-full bg-brand-100/40 blur-2xl" />
+                <div className="relative">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-violet-600 mb-4 shadow-lg shadow-brand-500/20">
+                    <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+                  </div>
+                  <SectionLabel>Problem Space</SectionLabel>
+                  <p className="text-[15px] leading-relaxed text-zinc-600 mt-2">People with ADHD experience elevated stress from frequent digital distractions — often without realizing the connection between their habits and their mental state.</p>
+                </div>
               </Card>
-              <Card hover>
-                <SectionLabel>Team</SectionLabel>
-                <div className="mt-2 space-y-2">
-                  {team.map(t => (
-                    <div key={t.name} className="flex items-center gap-3 rounded-xl bg-zinc-50/80 border border-zinc-100 px-3 py-2.5">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-brand-600 to-violet-600 text-[11px] font-bold text-white shadow-sm">{t.initials}</div>
-                      <div>
-                        <div className="text-sm font-semibold text-zinc-800">{t.name}</div>
-                        <div className="text-[11px] text-zinc-400">{t.role}</div>
+              <Card hover className="relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 rounded-full bg-violet-100/40 blur-2xl" />
+                <div className="relative">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-violet-600 mb-4 shadow-lg shadow-brand-500/20">
+                    <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg>
+                  </div>
+                  <SectionLabel>Team</SectionLabel>
+                  <div className="mt-3 space-y-2.5">
+                    {team.map(t => (
+                      <div key={t.name} className="flex items-center gap-3 rounded-xl bg-zinc-50/80 border border-zinc-100 px-3 py-2.5">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-600 to-violet-600 text-[11px] font-bold text-white shadow-sm">{t.initials}</div>
+                        <div>
+                          <div className="text-sm font-semibold text-zinc-800">{t.name}</div>
+                          <div className="text-[11px] text-zinc-400">{t.role}</div>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </Card>
             </div>
