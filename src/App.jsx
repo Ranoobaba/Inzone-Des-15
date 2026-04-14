@@ -12,6 +12,7 @@ const NAV = [
   { label: "Brainstorming", group: "prototyping" },
   { label: "Lo-fi Prototypes", group: "prototyping" },
   { label: "Hi-fi Prototypes", group: "prototyping" },
+  { label: "Prototype Interviews", group: "prototyping" },
 ];
 
 const team = [
@@ -128,6 +129,224 @@ const hifiPrototypes = [
   { idea: "Dark Horse", ideaColor: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200", accentColor: "from-fuchsia-500 to-purple-500", title: "Stress Monitoring Band", question: "How can we work off of current stress relief devices?", description: "Working off the heart rate monitoring capabilities of Apple Watches and similar wearables, we designed a cuff that fits around the arm and acts as a dedicated stress monitoring device. It takes into account important personalized information about each user to provide proactive, real-time stress alerts.", liveUrl: "https://heartlocker3.netlify.app", risk: "Relies on biometric accuracy that varies significantly across individuals — heart rate alone is an unreliable proxy for stress. The dedicated hardware adds cost and friction to adoption, and users may find wearing an extra device impractical compared to leveraging sensors already on their wrist." },
 ];
 
+/** Prototype testing sessions — Stress Lock, Heartlock, and vitals concept discussion */
+const prototypeParticipants = [
+  {
+    name: "Jayshan Bains",
+    meta: "18 years old · Undeclared, sciences · Freshman",
+    summary:
+      "High daily phone use (~6 hours, up to 7). Instagram is a primary stressor and social connector — happy to see family updates, but easy to get sidetracked; stress also comes from social comparison (e.g., unfollows). Wants more distance from the phone when it pulls attention.",
+    sections: [
+      {
+        title: "Background",
+        items: [
+          { q: "What is your name and age?", a: "Jayshan Bains, 18." },
+          { q: "What major and year?", a: "Undeclared, in the sciences — freshman." },
+          { q: "How many hours a day do you use your phone on average?", a: "Pretty high — up to 7 maybe; I'll say 6." },
+          { q: "Do certain apps make you feel different ways?", a: "Yeah — Instagram makes me happy getting updates from family, but it's easy to get sidetracked." },
+          { q: "Any apps that definitely cause stress? Why?", a: "Instagram for that too — if someone unfollows me or similar." },
+          { q: "If you could change one thing about your relationship with stressful apps?", a: "Try to distance yourself from it — it's easy to get sidetracked." },
+        ],
+      },
+      {
+        title: "Prototype session (Instagram + concepts)",
+        items: [
+          { q: "Which app on your phone might cause stress?", a: "Instagram." },
+          { q: "After 1 minute of Instagram, then 1 minute of Stress Lock — how do you feel?", a: "My mind is a little more clear, but still a bit stressed. It did take my mind off of it, I guess." },
+          { q: "After Instagram, then Heartlock — how do you feel?", a: "I tried something similar with Screen Time, but with a password — I found myself just saying OK every time. I would feel similar here." },
+          { q: "A future prototype could monitor blood pressure / stress (shown concept). Would you use it with the other prototypes or as a separate app?", a: "In conjunction with the apps." },
+        ],
+      },
+      {
+        title: "Debrief",
+        items: [
+          { q: "Favorite prototype overall — and why?", a: "The first one (Stress Lock)." },
+          { q: "Least favorite or least promising — and why?", a: "Heartlock felt like another Screen Time gate — easy to dismiss without changing behavior." },
+          { q: "How does having BPM on display feel if this were a real app?", a: "Definitely better — you realize how stressed you are by simple things." },
+          { q: "Which prototype would you use again?", a: "The extension band that would give me constant updates on stress." },
+          { q: "Any other feedback?", a: "Instead of a band, a watch around the wrist would be better." },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Diego Juarez",
+    meta: "24 years old · Media studies major, Spanish minor · Senior",
+    summary:
+      "Uses his phone up to ~5 hours when he has access, but deliberately limits carrying it — prefers computer or watch for access. Social apps can surface uncomfortable recommendations. Wants less frictionless access to engagement-driven apps and tools that reduce time on them.",
+    sections: [
+      {
+        title: "Background",
+        items: [
+          { q: "What is your name and age?", a: "Diego Juarez — 24 years old." },
+          { q: "What major and year?", a: "Media studies major with a minor in Spanish — senior." },
+          { q: "How many hours a day do you use your phone on average?", a: "Up to 5 hours when I have access. I try to limit my phone — that's why I don't carry it with me. If I need something, I use my computer or watch." },
+          { q: "Do certain apps make you feel different ways?", a: "Yeah — there are a few apps, namely social media." },
+          { q: "Any apps that definitely cause stress?", a: "YouTube and Instagram — some topics might be uncomfortable, or I don't like them, but they keep getting recommended." },
+          { q: "If you could change one thing about your relationship with stressful apps?", a: "Less access — try to limit my access. Those apps are basically made so I spend time on them; any mechanism that helps me reduce time, mostly on social media." },
+        ],
+      },
+      {
+        title: "Prototype session (Instagram + concepts)",
+        items: [
+          { q: "Which app on your phone might cause stress?", a: "Instagram." },
+          { q: "After 1 minute of Instagram, then 1 minute of Stress Lock — how do you feel?", a: "I did like it — some apps like that are distractions. It felt like a good way to activate my mind. I feel better — like a good way to take a break from something academic." },
+          { q: "After Instagram, then Heartlock — how do you feel?", a: "Especially if it's before [opening an app], it will help me decide if I actually want to use it. It can help break the dopamine before. It's a good way to refresh or pause, especially if it's something really stressful." },
+          { q: "Blood pressure / stress monitor concept — use with other prototypes or a third app? Smartwatch-style device?", a: "I would prefer to use the [prototypes] together — although if it was something like a smartwatch that collected data like heart rate, if it looked like that, I would be more willing to use it." },
+        ],
+      },
+      {
+        title: "Debrief",
+        items: [
+          { q: "Favorite prototype overall — and why?", a: "The first — maybe with a bigger, more visible timer. The game was fine, but maybe something with more reward." },
+          { q: "Least favorite or least promising — and why?", a: "The strap-style vitals device feels less useful when I already have a watch — questions about price, clearance, and redundancy. I'd be more likely to use adapted tools on a smartwatch I already wear." },
+          { q: "How does having BPM on display feel if this were a real app?", a: "My main concern is accuracy — I have a phone and a watch, and I don't know how it would work if only the phone, or if a device is mandatory — I'm skeptical. But it could be a good form of notification." },
+          { q: "Which prototype would you use again?", a: "I feel the first one; the second feels like a good option too — ideally one that's like both, before and after, maybe with a timer. Given the strap device, I don't see as much the point when I already have a watch." },
+          { q: "Any other feedback?", a: "These two apps could be mixed into one. Have the timer more visible so I can actually look at it — maybe a timer within the apps themselves. Have the apps on Apple and Samsung, and on smartwatches as well." },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Hamza",
+    meta: "21 · Psychology & data science, junior · Interviewer: Meshal Alothra · Remote video call",
+    summary:
+      "Uses his phone about five to six hours daily (more on weekends). Spotify and YouTube lift his mood; Instagram costs time without feeling bad in the moment — then annoyance sets in. Already uses a screen-time app but finds a scrolling-based \u201cgame\u201d ironic; wants feedback tied to how his body is actually doing. Wears a watch for Taekwondo.",
+    sections: [
+      {
+        title: "Background",
+        items: [
+          { q: "What is your name and age?", a: "Hamza, 21." },
+          { q: "What major are you, and what year are you?", a: "Psychology and data science — junior." },
+          { q: "How many hours a day would you say you use your phone, on average?", a: "Five or six hours — more on weekends." },
+          { q: "Would you say that certain apps on your phone make you feel certain ways — some happy, others not?", a: "Yeah — Spotify and YouTube put me in a good mood. Instagram is different: I don't feel bad on it, but then 40 minutes are gone and I'm annoyed at myself." },
+          { q: "Are there any apps that might cause you stress? If so, why?", a: "Instagram. Not stressful in the moment, but the aftermath is — especially when I have a fight or midterms coming up and I just wasted time on stuff I won't remember." },
+          { q: "If you could change one thing about your relationship with your phone and these stressful apps, what would it be?", a: "I use a screen time app already but it's purely software with no physical tracking. The only game is a scrolling one — which is ironic because scrolling is the problem. I want something connected to how my body is actually doing." },
+        ],
+      },
+      {
+        title: "Prototype session (Instagram + concepts)",
+        items: [
+          { q: "What app on your phone might cause you stress to interact with?", a: "Instagram." },
+          { q: "One minute of Instagram, then one minute of Stress Lock — how do you feel?", a: "I zoned out scrolling like usual. The game snapped me out of it and I felt more alert. But I wouldn't go out of my way to open a separate app for one game — feels like a step I'd skip most days." },
+          { q: "One minute of Instagram, then one minute of Heartlock — how do you feel?", a: "Way more complete. The profile setup made it feel built for me. Seeing my BPM on Instagram with the strain meter was cool — makes scrolling feel measurable. My current app just blocks stuff with no body feedback. This felt like it was actually paying attention." },
+          { q: "If you could test a prototype that monitors blood pressure and stress over time, what would you think?", a: "Really cool. I already wear a watch for Taekwondo so wrist stuff is fine. But would this work on Apple Watch? I don't want to wear two things." },
+          { q: "Would you use that in conjunction with the other prototypes, or as a separate third app?", a: "With Heartlock. One app, one wearable — everything in one place." },
+        ],
+      },
+      {
+        title: "Debrief",
+        items: [
+          { q: "Which prototype (out of 2\u20133) was your favorite?", a: "Prototype 3 — game variety, the breathing guide (my favorite part), and a health report that actually means something. Feels like a complete system." },
+          { q: "How does having your BPM on display or readily available feel, if this were in an actual app?", a: "I like it — makes me feel in control of both my mind and body." },
+          { q: "What would you like to use again?", a: "Prototype 3. The breathing guide alone would make me open the app. I'd want Apple Watch support and customization." },
+          { q: "Any other feedback?", a: "Add streaks or levels so the games don't get stale." },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Hashim",
+    meta: "22 · Economics & math, senior · Interviewer: Meshal Alothra · Remote video call",
+    summary:
+      "About 4\u20135 hours on phone but much more on laptop — all screens combined roughly ten to eleven hours. Discord and gaming feel connecting; Twitter can sour his mood. Ranked gaming tilt on PC as a bigger stress cycle than phone apps. Wants interventions that detect stress and tell him to take a break — not only tools built for Instagram scrollers.",
+    sections: [
+      {
+        title: "Background",
+        items: [
+          { q: "What is your name and age?", a: "Hashim, 22." },
+          { q: "What major are you, and what year are you?", a: "Econ and math — senior." },
+          { q: "How many hours a day would you say you use your phone, on average?", a: "4\u20135 on my phone, but way more on my laptop. All screens combined, probably ten or eleven hours." },
+          { q: "Would you say that certain apps on your phone make you feel certain ways?", a: "Discord and gaming stuff feel good — keeps me connected. Twitter gets me though: I'll read something dumb and be in a bad mood for no reason." },
+          { q: "Are there any apps that might cause you stress? If so, why?", a: "Twitter sometimes. But gaming stresses me out more than any phone app — I'll lose three ranked matches and keep queueing because I want to win before I stop. That cycle is worse than anything on my phone." },
+          { q: "If you could change one thing about your relationship with your phone and stressful apps, what would it be?", a: "I wish something could tell me when I'm stressed and say take a break. I don't use screen time apps because they're all built for Instagram scrollers, not someone who games for three hours and feels burnt out." },
+        ],
+      },
+      {
+        title: "Prototype session (Twitter + concepts)",
+        items: [
+          { q: "What app on your phone might cause you stress to interact with?", a: "Twitter — but my real stress is gaming on my laptop." },
+          { q: "One minute of Twitter, then one minute of Stress Lock — how do you feel?", a: "Twitter put me in a slightly annoyed mood. The game got my mind off it but felt basic — one game and that's it. I don't know if I'd remember to open this after getting irritated." },
+          { q: "One minute of Twitter, then one minute of Heartlock — how do you feel?", a: "Better than the first one. The health stuff was interesting but I didn't know what the numbers meant. The profile setup felt nice. Colors were a lot for me though — I wear glasses and bright interfaces bug me." },
+          { q: "If you could test a prototype that monitors blood pressure and stress over time, what would you think?", a: "That's sick. If it could catch that I'm stressed during a gaming session and buzz me, that'd be useful. But would this work on PC? That's where my stress is — it would help me." },
+          { q: "Would you use that with the other prototypes, or as a separate third app?", a: "With Heartlock — don't need another app. But I really want PC support, even a browser extension." },
+        ],
+      },
+      {
+        title: "Debrief",
+        items: [
+          { q: "Which prototype (out of 1\u20133) was your favorite?", a: "Prototype 3 for features — games are better, especially for impulse control. Breathing guide I'd use after bad sessions. But I want it to look like Prototype 1." },
+          { q: "How does having your BPM on display or readily available feel?", a: "Cool concept but meaningless without context. If it says 85 I need to know if that's good or bad. Add an explainer or onboarding." },
+          { q: "What would you like to use again?", a: "Prototype 3 with darker colors — breathing guide after gaming and impulse-control game before I queue up angry." },
+          { q: "Any other feedback?", a: "You're missing gamers — we're at desks for hours, stressed, and nothing is built for us. If Heartlock worked on PC and taught me the science I'd pay for it. Add onboarding and dark mode." },
+        ],
+      },
+    ],
+  },
+];
+
+/** Insights, quotes, recommendations, and reflection — Hamza & Hashim (Meshal); rendered below interview tabs */
+const prototypeHamzaHashimSynthesis = {
+  byParticipant: [
+    {
+      name: "Hamza",
+      insights: [
+        {
+          title: "Scrolling-based interventions can reinforce the habit they target",
+          body: "Screen time tools that use scrolling mechanics reinforce the habit they're supposed to fix. Hamza's current app uses a scrolling game as its intervention — the same motion as Instagram. Heartlock's cognitive games break that pattern physically. A badly designed intervention can make the problem worse instead of better.",
+        },
+        {
+          title: "The breathing guide created calm, not just distraction",
+          body: "We expected games to be the main draw, but Hamza's strongest reaction was to the breathing guide. He said the noise shut off and connected it to his Taekwondo recovery. Games reset attention; breathing changed how his body actually felt — a different outcome for overstimulation.",
+        },
+        {
+          title: "Students want tools on devices they already own",
+          body: "As soon as we showed the wearable concept, Hamza asked if it works on Apple Watch. He already wears one for training and has no interest in extra hardware. If Heartlock requires a new device, many students will skip it regardless of feature quality.",
+        },
+      ],
+      keyQuote:
+        "\"My current app literally has a scrolling game. Are you trying to get me off scrolling by making me scroll more? The breathing guide here actually made me relax. All the noise just shut off.\"",
+    },
+    {
+      name: "Hashim",
+      insights: [
+        {
+          title: "Health data without education is just noise",
+          body: "Hashim liked seeing BPM but didn't know what it meant. Unlike Hamza, who has athletic context for heart rate, Hashim had none. Without teaching users what the numbers mean, health tracking is weak for anyone who isn't already health-literate.",
+        },
+        {
+          title: "Visual accessibility drives daily use",
+          body: "Hashim wears glasses and stares at screens all day. He liked Prototype 1's dark, clean look but found 2 and 3 visually overwhelming — \"take the brain of three and put it in the body of one.\" For heavy screen users, a busy colorful interface is a usability barrier, not just preference.",
+        },
+        {
+          title: "Laptop / gaming stress is an underserved audience",
+          body: "Hashim asked repeatedly if Heartlock works on PC — that's where his stress lives. He games for hours, gets tilted, rage-queues, and has nothing to intervene. Most screen-time apps target phone and social media; students whose stress comes from a laptop are underserved.",
+        },
+      ],
+      keyQuote:
+        "\"Take the brain of Prototype 3 and put it in the body of Prototype 1. You're missing gamers — we sit at desks for hours stressed and nothing is built for us.\"",
+    },
+  ],
+  recommendations: [
+    {
+      title: "Prioritize Prototype 3 and make the breathing guide core",
+      body: "Both participants had their strongest reaction to the breathing guide. Hamza said it was what he'd come back for; Hashim wanted it after gaming. It should be front and center, not buried behind games.",
+    },
+    {
+      title: "Add onboarding that explains what health data means",
+      body: "Hashim said BPM was meaningless without context. Hamza also suggested onboarding. A short walkthrough on HRV, heart rate zones, and a stress index would make the health report useful instead of confusing.",
+    },
+    {
+      title: "Add visual customization including dark mode",
+      body: "Hashim wanted Prototype 3's features with Prototype 1's look. For students who wear glasses or spend long hours on screens, bright interfaces are a barrier — themes and dark mode affect retention.",
+    },
+  ],
+  reflection:
+    "If we ran this study again we would ask participants upfront what tools they already use for screen time or stress. Hamza's comparison to his scrolling game app was one of our best insights — it only came up because he volunteered it.",
+};
+
+const { byParticipant: prototypeSynthesisParticipants, recommendations: prototypeSynthesisRecommendations, reflection: prototypeSynthesisReflection } = prototypeHamzaHashimSynthesis;
+
 /* ═══════════════════════════════════ COMPONENTS ═══════════════════════════════════ */
 
 function Badge({ children, className = "" }) {
@@ -180,6 +399,7 @@ function StatNumber({ value, label }) {
 export default function App() {
   const [active, setActive] = useState("Overview");
   const [openInterview, setOpenInterview] = useState(0);
+  const [openProtoInterview, setOpenProtoInterview] = useState(0);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const [notePos, setNotePos] = useState(() => {
@@ -721,6 +941,131 @@ export default function App() {
                   </Card>
                 ))}
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* ═══════════ PROTOTYPE INTERVIEWS ═══════════ */}
+        {active === "Prototype Interviews" && (
+          <div className="animate-fade-in">
+            <SectionHeading
+              title="Prototype Interviews"
+              subtitle="User testing sessions with four participants. Each tried Stress Lock and Heartlock after one minute of a stressful app (Instagram / Twitter), then discussed the vitals-monitoring concept. Background, session reactions, and debrief are captured per participant; a synthesis of Hamza and Hashim's remote sessions follows."
+              badge="Phase 3"
+            />
+
+            <Card className="mb-6">
+              <SectionLabel>Documents</SectionLabel>
+              <div className="mt-3 flex flex-wrap gap-3">
+                <a
+                  href="/milestone-3-revised-research-plan.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-brand-50 border border-brand-200 px-4 py-2 text-sm font-semibold text-brand-700 hover:bg-brand-100 transition-colors"
+                >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                  Revised Research Plan
+                </a>
+                <a
+                  href="/milestone-3-inzone-prototype-interview-discussion-guide.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-brand-50 border border-brand-200 px-4 py-2 text-sm font-semibold text-brand-700 hover:bg-brand-100 transition-colors"
+                >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                  Interview Discussion Guide
+                </a>
+              </div>
+            </Card>
+
+            <div className="mb-8 flex gap-1 border-b border-zinc-200 flex-wrap">
+              {prototypeParticipants.map((p, idx) => (
+                <button
+                  key={p.name}
+                  onClick={() => setOpenProtoInterview(idx)}
+                  className={`relative px-4 py-2.5 text-sm font-medium transition-colors cursor-pointer ${openProtoInterview === idx ? "text-brand-700" : "text-zinc-400 hover:text-zinc-600"}`}
+                >
+                  {p.name}
+                  {openProtoInterview === idx && <div className="absolute bottom-0 left-2 right-2 h-[2px] rounded-full bg-brand-600" />}
+                </button>
+              ))}
+            </div>
+
+            {prototypeParticipants[openProtoInterview] && (() => {
+              const p = prototypeParticipants[openProtoInterview];
+              return (
+                <div className="space-y-6 animate-fade-in" key={openProtoInterview}>
+                  <Card>
+                    <SectionLabel>Participant</SectionLabel>
+                    <h3 className="text-xl font-bold text-zinc-800 mt-1">{p.name}</h3>
+                    <div className="text-[13px] text-zinc-400 mt-0.5">{p.meta}</div>
+                    <p className="mt-4 text-[15px] text-zinc-600 leading-relaxed">{p.summary}</p>
+                  </Card>
+
+                  {p.sections.map(sec => (
+                    <div key={sec.title}>
+                      <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-400">{sec.title}</div>
+                      <div className="space-y-3">
+                        {sec.items.map((item, i) => (
+                          <Card key={i} hover>
+                            <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-300 mb-2">Question {i + 1}</div>
+                            <p className="text-sm font-semibold text-zinc-800 leading-snug mb-2">{item.q}</p>
+                            <p className="text-sm text-zinc-500 leading-relaxed">{item.a}</p>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
+
+            <div className="mt-16 pt-12 border-t border-zinc-200">
+              <SectionHeading
+                title="Prototype Interview Synthesis"
+                subtitle="Team takeaways from Meshal's remote prototype sessions with Hamza and Hashim — separate from the raw interview notes above."
+                badge="Synthesis"
+              />
+
+              <div className="space-y-10">
+                {prototypeSynthesisParticipants.map(row => (
+                  <div key={row.name}>
+                    <h3 className="text-xl font-bold text-zinc-800 mb-4">{row.name}</h3>
+                    <SectionLabel>Insights</SectionLabel>
+                    <div className="mt-3 space-y-3">
+                      {row.insights.map(ins => (
+                        <GlowCard key={ins.title}>
+                          <div className="text-base font-bold text-zinc-800 mb-1.5">{ins.title}</div>
+                          <p className="text-sm text-zinc-500 leading-relaxed">{ins.body}</p>
+                        </GlowCard>
+                      ))}
+                    </div>
+                    <div className="mt-4 rounded-2xl border-l-4 border-brand-400 bg-brand-50/40 border border-brand-100 px-5 py-4">
+                      <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-brand-500 mb-2">Key Quote</div>
+                      <p className="text-[15px] text-zinc-700 leading-relaxed italic">{row.keyQuote}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <Card className="mt-10">
+                <SectionLabel>Recommendations</SectionLabel>
+                <div className="mt-4 space-y-4">
+                  {prototypeSynthesisRecommendations.map((rec, i) => (
+                    <div key={rec.title} className="flex gap-4 items-start">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-purple-700 to-violet-600 text-xs font-bold text-white shrink-0 shadow-sm">{i + 1}</span>
+                      <div>
+                        <div className="text-sm font-semibold text-zinc-800 mb-1">{rec.title}</div>
+                        <p className="text-sm text-zinc-500 leading-relaxed">{rec.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 border-t border-zinc-100 pt-6">
+                  <SectionLabel>Reflection</SectionLabel>
+                  <p className="mt-2 text-sm text-zinc-500 leading-relaxed">{prototypeSynthesisReflection}</p>
+                </div>
+              </Card>
             </div>
           </div>
         )}
