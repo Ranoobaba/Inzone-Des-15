@@ -283,6 +283,44 @@ const prototypeParticipants = [
       },
     ],
   },
+  {
+    name: "Gabriel Ryan Turner",
+    meta: "19 years old · IEOR · Freshman",
+    summary:
+      "High daily phone use (~6 hours). Instagram is engaging but feels like a time drain, especially late at night. Gmail is a major stress trigger — compulsive checking for missed assignments or work emails. Has considered a phone lock-box for physical separation. Prefers software-only solutions over wearables since most people already own a smartwatch.",
+    sections: [
+      {
+        title: "Background",
+        items: [
+          { q: "What is your name and age?", a: "Gabriel Ryan Turner, 19." },
+          { q: "What major and year?", a: "I am a freshman in IEOR." },
+          { q: "How many hours a day do you use your phone on average?", a: "Too many, I would say like 6 hours at most." },
+          { q: "Do certain apps make you feel certain ways?", a: "I'm on Instagram a lot, and of course I like it because I get to communicate with friends, but sometimes I feel like it's a time drain. Sometimes, I'll find myself scrolling late at night, not getting enough sleep." },
+          { q: "Any apps that definitely cause stress? Why?", a: "Probably Gmail; I like checking in too much, and sometimes that stresses me out in case I forgot an assignment or if my boss is emailing me for work. I feel like I need to constantly check it." },
+          { q: "If you could change one thing about your relationship with stressful apps?", a: "Something I've considered is getting a phone lock-box, so that I have a physical separation between me and my phone." },
+        ],
+      },
+      {
+        title: "Prototype session (Gmail + concepts)",
+        items: [
+          { q: "Which app on your phone might cause you stress?", a: "Gmail, mainly." },
+          { q: "After 1 minute of Gmail, then 1 minute of Stress Lock — how do you feel?", a: "Going through my inboxes, through anything professional. The one I keep most up to date is my school Gmail account. I have a few meeting notifications. The game was a little unintuitive, but I get what it was supposed to do." },
+          { q: "After Gmail, then Heartlock — how do you feel?", a: "[Completed the session as instructed.]" },
+          { q: "If given a chance to test a prototype that monitors blood pressure and stress levels, what would you think?", a: "I already have a watch. I personally don't think that is something I would buy if the app itself is helpful enough. A lot of people are going to have Fitbits or Apple Watches anyway, and those are pretty good at helping people with stress levels. I wouldn't personally get it solely for that." },
+          { q: "Would you use this prototype in conjunction with the others, or prefer a third app?", a: "I would personally just use the software, because I thought that the app itself was unique and cool. I would just use the app itself — it's cool how it locks down the stressful apps until you take some time to breathe or distract yourself. If it could be like this app called Endel, which plays calming music or hold-tone sounds, it could be in conjunction with that or something. If people already have an Apple Watch, this much isn't as much needed." },
+        ],
+      },
+      {
+        title: "Debrief",
+        items: [
+          { q: "Favorite prototype overall — and why?", a: "The first game, Stress Lock. The number game could be something else, but I like the idea that you can have a game where you can zone out and just turn your brain off. Maybe change it to Pong or something — just zone out and think about something else for a bit." },
+          { q: "How does having BPM on display feel if this were a real app?", a: "I like that — I would like to see what my heart level is before that so I can see if I am really in need of the stress-relief before using it." },
+          { q: "Which prototype would you use again?", a: "Stress Lock." },
+          { q: "Any other feedback?", a: "No, other than what I've already given." },
+        ],
+      },
+    ],
+  },
 ];
 
 /** Insights, quotes, recommendations, and reflection — Hamza & Hashim (Meshal); rendered below interview tabs */
