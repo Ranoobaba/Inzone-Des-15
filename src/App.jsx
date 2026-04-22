@@ -1023,76 +1023,26 @@ export default function App() {
                 {/* Needfinding Research */}
                 <Card className="mb-6">
                   <SectionLabel>Needfinding Research</SectionLabel>
-                  <div className="mt-3 relative overflow-hidden rounded-xl bg-zinc-50 border border-zinc-200/60 px-5 py-4 mb-5">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-zinc-400 block mb-1">Original Research Question</span>
-                    <p className="text-sm font-medium text-zinc-700 leading-relaxed">&ldquo;How do people with ADHD manage stress and focus, and how does phone and screen use affect those experiences throughout the day?&rdquo;</p>
-                  </div>
-                  <p className="text-[15px] leading-[1.85] text-zinc-600">
-                    We conducted semi-structured interviews with 3 participants — college students who experience attention difficulties and elevated phone use, including individuals with diagnosed ADHD and high-stress users without a formal diagnosis. Our design research method was contextual inquiry: 10-minute interviews with in-context observation of phone habits, home screens, and physical behaviors. Three key insights emerged: (1) distraction is rationalized, not impulsive — users construct logical justifications for phone use, so hard blocks feel patronizing; (2) friction is more effective than restriction — the 6–8 second OPAL delay was more valued than total app blocks; and (3) stress awareness is retrospective — users rarely know they are overwhelmed until after the fact, often only when others point it out. These insights shaped our &ldquo;How Might We&rdquo; statement by centering it on helping users recognize the real-time relationship between phone habits and stress, rather than simply blocking access.
-                  </p>
                 </Card>
 
                 {/* Ideation */}
                 <Card className="mb-6">
                   <SectionLabel>Ideation</SectionLabel>
-                  <p className="text-[15px] leading-[1.85] text-zinc-600 mb-5">
-                    We used brainstorming as our ideation method, meeting as a team to generate solutions grounded in our needfinding insights. From this session we chose three ideas to prototype: <strong>Heartlock</strong> (Most Likely to Work) — a full end-to-end app with puzzle-based friction, leaderboards, and charity incentives; <strong>Stress Lock</strong> (Most Likely to Delight) — a notification-based system that creates gentle, customizable nudges when stress-app usage is detected; and <strong>Stress Monitoring Band</strong> (Dark Horse) — a wearable cuff that provides real-time, personalized stress alerts using biometric data.
-                  </p>
-                  <ImageSlot src="/brainstorm-whiteboard.png" alt="Brainstorming session whiteboard" />
                 </Card>
 
                 {/* Lo-fi Prototypes */}
                 <Card className="mb-6">
                   <SectionLabel>Lo-fi Prototype Process</SectionLabel>
-                  <p className="text-[15px] leading-[1.85] text-zinc-600 mb-5">
-                    We created paper sketches and wireframes for each of our three ideas. Stress Lock (Most Likely to Delight) asked: &ldquo;How might we limit the stress that our users face without directly enforcing a change of habit, but rather helping the user towards making the healthier habit themselves?&rdquo; Heartlock (Most Likely to Work) asked: &ldquo;How does the full end-to-end workflow look, and how can we make the app actually useful for the user?&rdquo; Stress Monitoring Band (Dark Horse) asked: &ldquo;How can we work off of current stress relief devices?&rdquo; Our key takeaway was that each prototype approached the &ldquo;How Might We&rdquo; question from a different angle, and all reflected themes from our interview feedback — validating that the problem space was rich enough to support multiple viable solutions.
-                  </p>
-                  <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="space-y-2">
-                      <ImageSlot src="/lofi-scan-1.png" alt="Lo-fi: Stress Lock" />
-                      <p className="text-xs text-zinc-400 text-center font-medium">Stress Lock</p>
-                    </div>
-                    <div className="space-y-2">
-                      <ImageSlot src="/lofi-inzone-ultra.png" alt="Lo-fi: Heartlock" />
-                      <p className="text-xs text-zinc-400 text-center font-medium">Heartlock</p>
-                    </div>
-                    <div className="space-y-2">
-                      <ImageSlot src="/lofi-scan-2.png" alt="Lo-fi: Stress Monitoring Band" />
-                      <p className="text-xs text-zinc-400 text-center font-medium">Stress Monitoring Band</p>
-                    </div>
-                  </div>
                 </Card>
 
                 {/* Hi-fi Prototypes */}
                 <Card className="mb-6">
                   <SectionLabel>Hi-fi Prototype Process</SectionLabel>
-                  <p className="text-[15px] leading-[1.85] text-zinc-600 mb-5">
-                    We refined each lo-fi sketch into interactive, high-fidelity prototypes deployed as live web demos. Stress Lock (Most Likely to Delight) asked: &ldquo;How might we limit the stress that our users face without directly enforcing a change of habit, but rather helping the user towards making the healthier habit themselves?&rdquo; Heartlock (Most Likely to Work) asked: &ldquo;How can we make this product attractive to our users when the overall assistance is with something very personal like someone&rsquo;s stress?&rdquo; Stress Monitoring Band (Dark Horse) asked: &ldquo;How can we work off of current stress relief devices?&rdquo; Our key takeaway was that moving to hi-fi revealed the importance of visual clarity and onboarding — participants responded most positively to Heartlock&rsquo;s completeness but wanted darker themes and better explanations of health data.
-                  </p>
-                  <div className="grid gap-4 sm:grid-cols-3">
-                    {hifiPrototypes.map(proto => (
-                      <div key={proto.title} className="space-y-2">
-                        <a href={proto.liveUrl} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-xl border border-zinc-200 hover:border-brand-300 transition-colors group">
-                          <div className={`flex items-center justify-center h-40 bg-gradient-to-br ${proto.accentColor} relative`}>
-                            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.2)_0%,transparent_50%)]" />
-                            <div className="relative text-center px-4">
-                              <div className="text-white font-bold text-lg mb-1">{proto.title}</div>
-                              <div className="text-white/60 text-xs">Click to open live demo</div>
-                            </div>
-                          </div>
-                        </a>
-                        <p className="text-xs text-zinc-400 text-center font-medium">{proto.title}</p>
-                      </div>
-                    ))}
-                  </div>
                 </Card>
 
                 {/* Usability Testing */}
                 <Card>
                   <SectionLabel>Usability Testing</SectionLabel>
-                  <p className="text-[15px] leading-[1.85] text-zinc-600">
-                    We conducted prototype interview sessions with 5 participants — college students aged 18–24 spanning freshmen to seniors, including users with high daily phone use (5–7 hours), varied stress triggers (Instagram, Gmail, Twitter, gaming), and different device habits (phone-primary, laptop-primary, smartwatch wearers). Our design research method was moderated usability testing: each participant used a stress-inducing app for one minute, then used each prototype for one minute, followed by a structured debrief. Three key insights and corresponding recommendations emerged: (1) scrolling-based interventions reinforce the habit they target — Hamza&rsquo;s existing screen-time app used a scrolling game as its intervention, the same motion as Instagram, so we recommend that Heartlock&rsquo;s games use non-scrolling, cognitively distinct mechanics (puzzles, breathing, impulse-control tasks); (2) health data without education is just noise — Hashim liked seeing BPM but didn&rsquo;t know what it meant, so we recommend adding onboarding that explains heart rate zones, HRV, and a stress index in plain language; and (3) laptop and gaming stress is an underserved audience — Hashim asked repeatedly if Heartlock works on PC because that&rsquo;s where his stress lives, so we recommend building a browser extension or desktop companion to serve students whose stress comes from a computer rather than a phone.
-                  </p>
                 </Card>
               </div>
 
