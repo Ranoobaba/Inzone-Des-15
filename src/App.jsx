@@ -1033,14 +1033,49 @@ export default function App() {
               <div>
                 <h3 className="text-2xl font-extrabold text-zinc-900 tracking-tight mb-6">Design Process</h3>
 
+                {/* Research Question */}
+                <Card className="mb-6">
+                  <SectionLabel>Research Question</SectionLabel>
+                  <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-5 py-4 shadow-lg shadow-brand-500/15">
+                    <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
+                    <p className="relative text-[15px] font-medium leading-relaxed text-white">&ldquo;How do people with ADHD manage stress and focus, and how does phone and screen use affect those experiences throughout the day?&rdquo;</p>
+                  </div>
+                </Card>
+
                 {/* Needfinding Research */}
                 <Card className="mb-6">
                   <SectionLabel>Needfinding Research</SectionLabel>
+                  <p className="text-[15px] leading-[1.85] text-zinc-600">
+                    For the needfinding research, our team began with <span className="font-semibold text-zinc-800">interviews</span> to scope out the experience of people who we believed shared the issue that made up our research question. Each of us chose a participant, with our main requirements for recruits being that they be college students like ourselves who agree to using their phones constantly. We ended up with <span className="font-semibold text-zinc-800">3 recruits</span>, for whom we then interviewed on their current habits with phone use, the effect they thought it had on their stress and work, and what they wish could be changed with their current relationship with their phone. Our summarized feedback showed that students with these issues found physical movement linked towards their stress status, the stress issued by phones seemed self-aware only after the interaction, and users were trying to rationalize phone distractions. Then, by breaking down what each of these observations meant and understanding then what these recruits actually wanted, Inzone formed its statement: &ldquo;How might we help people with attention difficulties recognize the real-time relationship between their phone habits and their stress &mdash; so they can make more intentional choices throughout the day?&rdquo;
+                  </p>
                 </Card>
 
                 {/* Ideation */}
                 <Card className="mb-6">
                   <SectionLabel>Ideation</SectionLabel>
+                  <p className="text-[15px] leading-[1.85] text-zinc-600">
+                    After taking into consideration the feedback we had from our initial needfinding interviews, as well as mapping that feedback into a workable problem space, we began to <span className="font-semibold text-zinc-800">brainstorm</span> possible solutions and applications. We split the work for 3 possible prototypes among us, and ended up with those down below. We each pitched our ideas, gave each other feedback, and drew out what we wanted to include from each solution towards our new prototypes.
+                  </p>
+                  <div className="mt-5 overflow-hidden rounded-xl border border-zinc-200">
+                    <img src="/brainstorm-whiteboard.png" alt="Brainstorming whiteboard with sticky notes and sketches" className="w-full" />
+                  </div>
+                  <div className="mt-5">
+                    <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-400">Three Ideas Chosen to Prototype</div>
+                    <div className="grid gap-3 sm:grid-cols-3">
+                      <div className="rounded-xl border border-green-200 bg-green-50/50 p-4">
+                        <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-green-600 mb-1">Most Likely to Work</div>
+                        <div className="text-base font-bold text-zinc-800">Heartlock</div>
+                      </div>
+                      <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-4">
+                        <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-amber-600 mb-1">Most Likely to Delight</div>
+                        <div className="text-base font-bold text-zinc-800">Stress Lock</div>
+                      </div>
+                      <div className="rounded-xl border border-violet-200 bg-violet-50/50 p-4">
+                        <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-violet-600 mb-1">Dark Horse</div>
+                        <div className="text-base font-bold text-zinc-800">Stress Monitoring Band</div>
+                      </div>
+                    </div>
+                  </div>
                 </Card>
 
                 {/* Lo-fi Prototypes */}
