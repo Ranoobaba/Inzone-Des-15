@@ -1001,7 +1001,7 @@ export default function App() {
                     playsInline
                     preload="metadata"
                   >
-                    <source src="/Inzone Initial Summary Video.mp4" type="video/mp4" />
+                    <source src="/inzone-summary.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
