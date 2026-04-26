@@ -1081,16 +1081,59 @@ export default function App() {
                 {/* Lo-fi Prototypes */}
                 <Card className="mb-6">
                   <SectionLabel>Lo-fi Prototype Process</SectionLabel>
+                  <div className="mt-5 space-y-6">
+                    {lofiPrototypes.map((proto, i) => (
+                      <div key={i} className="flex flex-col sm:flex-row gap-6">
+                        {proto.imageUrl && (
+                          <div className="sm:w-1/2">
+                            <div className="overflow-hidden rounded-xl border border-zinc-200">
+                              <img src={proto.imageUrl} alt={`Lo-fi sketch: ${proto.title}`} className="w-full" />
+                            </div>
+                          </div>
+                        )}
+                        <div className={`${proto.imageUrl ? "sm:w-1/2" : ""} flex flex-col justify-center`}>
+                          <div className="text-base font-bold text-zinc-800 mb-2">{proto.title}</div>
+                          <div className="rounded-xl bg-zinc-50 border border-zinc-200/60 px-4 py-3">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-zinc-400 block mb-1">Question Answered</span>
+                            <p className="text-sm font-medium text-zinc-700 leading-relaxed">{proto.question}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </Card>
 
                 {/* Hi-fi Prototypes */}
                 <Card className="mb-6">
                   <SectionLabel>Hi-fi Prototype Process</SectionLabel>
+                  <div className="mt-5 grid gap-6 sm:grid-cols-3">
+                    <div className="text-center">
+                      <div className="overflow-hidden rounded-xl border border-zinc-200">
+                        <img src="/stress-lock-hifi.png" alt="Stress Lock hi-fi prototype" className="w-full" />
+                      </div>
+                      <div className="mt-3 text-sm font-bold text-zinc-800">Stress Lock</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="overflow-hidden rounded-xl border border-zinc-200">
+                        <img src="/heartlock-hifi.png" alt="Heartlock hi-fi prototype" className="w-full" />
+                      </div>
+                      <div className="mt-3 text-sm font-bold text-zinc-800">Heartlock</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="overflow-hidden rounded-xl border border-zinc-200">
+                        <img src="/stress-band-hifi.png" alt="Stress Monitoring Band hi-fi prototype" className="w-full" />
+                      </div>
+                      <div className="mt-3 text-sm font-bold text-zinc-800">Stress Monitoring Band</div>
+                    </div>
+                  </div>
                 </Card>
 
                 {/* Usability Testing */}
                 <Card>
                   <SectionLabel>Usability Testing</SectionLabel>
+                  <p className="text-[15px] leading-[1.85] text-zinc-600">
+                    To further test how usable our prototypes were at this moment, we began a second round of interviews with new recruits that still matched our necessary user requirements. We requested that these recruits use the available prototypes after spending 1 minute each on what they considered a stressful app so that we could scope out what current impact our solutions were having. Using their feedback, we will be moving to make some modifications towards our finalized app: Heartlock 3.0. Some testers noted that screen-time tools using scrolling mechanics can actually reinforce the habits they are supposed to fix &mdash; Heartlock&rsquo;s cognitive games break that pattern physically. The breathing guide was a standout: rather than simply resetting attention like the games, it changed how testers&rsquo; bodies actually felt, creating genuine calm instead of just distraction. Testers also made clear they want tools on devices they already own, like an Apple Watch, rather than extra hardware. On the data side, some testers liked seeing BPM readouts but did not know what the numbers meant &mdash; without teaching users how to interpret health data, the tracking feels like noise. Visual accessibility mattered as well: some testers found busy, colorful interfaces overwhelming and preferred a clean, dark design for long screen sessions. Additionally, some testers pointed out that laptop and gaming stress is an underserved space &mdash; most screen-time apps target phones and social media, leaving students whose stress comes from a computer without support. Based on these findings, our recommendations are to prioritize Prototype 3 and make the breathing guide a core feature, add onboarding that explains what health data like HRV and heart-rate zones actually mean, and introduce visual customization including dark mode. If we ran this study again, we would ask participants upfront what tools they already use for screen time or stress &mdash; one tester&rsquo;s comparison to a scrolling game app was one of our best insights, and it only came up because they volunteered it.
+                  </p>
                 </Card>
               </div>
 
