@@ -991,6 +991,22 @@ export default function App() {
 
             <div className="space-y-8">
 
+              {/* Summary Video */}
+              <Card>
+                <SectionLabel>Our Story</SectionLabel>
+                <div className="mt-2 overflow-hidden rounded-xl">
+                  <video
+                    className="w-full rounded-xl"
+                    controls
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src="/Inzone Initial Summary Video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </Card>
+
               {/* Context */}
               <Card>
                 <SectionLabel>Context</SectionLabel>
