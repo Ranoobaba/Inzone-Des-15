@@ -995,15 +995,12 @@ export default function App() {
               <Card>
                 <SectionLabel>Our Story</SectionLabel>
                 <div className="mt-2 overflow-hidden rounded-xl">
-                  <video
-                    className="w-full rounded-xl"
-                    controls
-                    playsInline
-                    preload="metadata"
-                  >
-                    <source src="/inzone-summary.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                  <iframe
+                    className="w-full aspect-video rounded-xl"
+                    src="https://drive.google.com/file/d/1U8mZq_DkQhvPtk-lmDEGP929doW9-lLV/preview"
+                    allow="autoplay"
+                    allowFullScreen
+                  />
                 </div>
               </Card>
 
