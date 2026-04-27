@@ -334,13 +334,8 @@ function Card({ children, className = "", hover = false }) {
   return <div className={`rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] ${hover ? "card-hover" : ""} ${className}`}>{children}</div>;
 }
 
-function GlowCard({ children, className = "", gradient = "from-brand-500/10 to-violet-500/10" }) {
-  return (
-    <div className={`relative group ${className}`}>
-      <div className={`absolute -inset-0.5 rounded-2xl bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-100 blur transition-opacity duration-300`} />
-      <div className="relative rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">{children}</div>
-    </div>
-  );
+function GlowCard({ children, className = "" }) {
+  return <div className={`rounded-2xl border border-zinc-200 bg-white p-6 ${className}`}>{children}</div>;
 }
 
 function SectionLabel({ children }) {
@@ -350,9 +345,9 @@ function SectionLabel({ children }) {
 function SectionHeading({ title, subtitle, badge }) {
   return (
     <div className="mb-10 animate-fade-in">
-      {badge && <Badge className="bg-brand-50 text-brand-600 border border-brand-200 mb-3">{badge}</Badge>}
-      <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">{title}</h2>
-      {subtitle && <p className="mt-2 text-base text-zinc-500 max-w-2xl leading-relaxed">{subtitle}</p>}
+      {badge && <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-400">{badge}</div>}
+      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950">{title}</h2>
+      {subtitle && <p className="mt-3 text-base text-zinc-600 max-w-2xl leading-relaxed">{subtitle}</p>}
     </div>
   );
 }
@@ -408,7 +403,7 @@ export default function App() {
   const navigate = (label) => { setActive(label); setMobileNavOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] font-sans text-zinc-900 antialiased">
+    <div className="min-h-screen bg-[#fafafa] font-sans text-zinc-950 antialiased">
 
       {/* ─── Header ─── */}
       <header className="glass sticky top-0 z-50 border-b border-zinc-200/60">
@@ -418,7 +413,7 @@ export default function App() {
               <span className="text-xs font-extrabold text-white tracking-tight">IN</span>
             </div>
             <div className="hidden sm:block">
-              <span className="text-sm font-bold text-zinc-900 group-hover:text-brand-700 transition-colors">INZONE</span>
+              <span className="text-sm font-bold text-zinc-950 group-hover:text-brand-700 transition-colors">INZONE</span>
               <span className="text-zinc-300 mx-2">|</span>
               <span className="text-xs text-zinc-400 font-medium">DES 15</span>
             </div>
@@ -430,7 +425,7 @@ export default function App() {
               return (
                 <div key={n.label} className="flex items-center">
                   {divider && <div className="mx-1.5 h-4 w-px bg-zinc-200" />}
-                  <button onClick={() => navigate(n.label)} className={`relative rounded-lg px-2.5 py-1.5 text-[12px] font-medium transition-all cursor-pointer ${active === n.label ? "text-brand-700" : "text-zinc-500 hover:text-zinc-700 hover:bg-zinc-100/80"}`}>
+                  <button onClick={() => navigate(n.label)} className={`relative rounded-lg px-2.5 py-1.5 text-[12px] font-medium transition-all cursor-pointer ${active === n.label ? "text-brand-700" : "text-zinc-600 hover:text-zinc-700 hover:bg-zinc-100/80"}`}>
                     {n.label}
                     {active === n.label && <div className="absolute -bottom-[9px] left-2 right-2 h-[2px] rounded-full bg-brand-600" />}
                   </button>
@@ -439,7 +434,7 @@ export default function App() {
             })}
           </nav>
 
-          <button onClick={() => setMobileNavOpen(!mobileNavOpen)} className="lg:hidden rounded-lg p-2 text-zinc-500 hover:bg-zinc-100 cursor-pointer">
+          <button onClick={() => setMobileNavOpen(!mobileNavOpen)} className="lg:hidden rounded-lg p-2 text-zinc-600 hover:bg-zinc-100 cursor-pointer">
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileNavOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} /></svg>
           </button>
         </div>
@@ -466,13 +461,7 @@ export default function App() {
             <p className="mx-auto max-w-2xl text-lg sm:text-xl leading-relaxed text-white/75 mb-12">
               Understanding how people with ADHD manage focus and stress — and designing solutions that work <em className="text-white not-italic font-semibold">with</em> their habits, not against them.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 max-w-lg sm:max-w-2xl mx-auto">
-              <StatNumber value="3" label="Interviews" />
-              <StatNumber value="5" label="Insights" />
-              <StatNumber value="4" label="Themes" />
-              <StatNumber value="3" label="Prototypes" />
-            </div>
-            <div className="mt-14 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
               <button onClick={() => navigate("Research Plan")} className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-purple-800 shadow-lg shadow-purple-900/30 hover:shadow-purple-900/40 hover:scale-[1.03] transition-all cursor-pointer">
                 Explore Our Research
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
@@ -485,15 +474,15 @@ export default function App() {
         </div>
       )}
 
-      <main className={`mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 ${active === "Overview" ? "pt-0 sm:pt-0" : ""}`} key={active}>
+      <main className={`mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 ${active === "Overview" ? "pt-0 sm:pt-0" : ""}`}>
 
         {/* ═══════════ OVERVIEW ═══════════ */}
         {active === "Overview" && (
           <div className="space-y-10 animate-fade-in">
 
             <div className="text-center max-w-3xl mx-auto pt-8">
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 mb-4">Why This Research Matters</h2>
-              <p className="text-base sm:text-lg text-zinc-500 leading-relaxed">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-950 mb-4">Why This Research Matters</h2>
+              <p className="text-base sm:text-lg text-zinc-600 leading-relaxed">
                 Each of us has personally experienced the frustration of losing focus — and turning to our phones without fully understanding why. We wanted to explore this deeply familiar yet poorly understood space.
               </p>
             </div>
@@ -512,8 +501,8 @@ export default function App() {
               </div>
               <div className="grid gap-4 sm:grid-cols-3">
                 {["What is the relationship between daily screen time and academic productivity among college students with ADHD?", "What coping strategies do people with attention difficulties use to manage digital distractions, and which ones are most effective?", "How does the frequency of phone notifications impact stress levels and emotional regulation in individuals with ADHD?"].map((rq, i) => (
-                  <GlowCard key={i} className={`animate-fade-in-slow stagger-${i + 1}`}>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 text-xs font-bold text-white mb-4 shadow-sm">{i + 1}</span>
+                  <GlowCard key={i} className="">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-zinc-100 text-zinc-700 text-xs font-bold mb-4 ring-1 ring-zinc-200">{i + 1}</span>
                     <p className="text-sm text-zinc-600 leading-relaxed">{rq}</p>
                   </GlowCard>
                 ))}
@@ -524,8 +513,8 @@ export default function App() {
               <Card hover className="relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 rounded-full bg-brand-100/40 blur-2xl" />
                 <div className="relative">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 mb-4 shadow-lg shadow-brand-500/20">
-                    <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100 ring-1 ring-zinc-200 mb-4">
+                    <svg className="h-5 w-5 text-zinc-700" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
                   </div>
                   <SectionLabel>Problem Space</SectionLabel>
                   <p className="text-[15px] leading-relaxed text-zinc-600 mt-2">People with ADHD experience elevated stress from frequent digital distractions — often without realizing the connection between their habits and their mental state.</p>
@@ -534,14 +523,14 @@ export default function App() {
               <Card hover className="relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 rounded-full bg-violet-100/40 blur-2xl" />
                 <div className="relative">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 mb-4 shadow-lg shadow-brand-500/20">
-                    <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100 ring-1 ring-zinc-200 mb-4">
+                    <svg className="h-5 w-5 text-zinc-700" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg>
                   </div>
                   <SectionLabel>Team</SectionLabel>
                   <div className="mt-3 space-y-2.5">
                     {team.map(t => (
                       <div key={t.name} className="flex items-center gap-3 rounded-xl bg-zinc-50/80 border border-zinc-100 px-3 py-2.5">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purple-700 to-violet-600 text-[11px] font-bold text-white shadow-sm">{t.initials}</div>
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-zinc-700 text-[11px] font-bold ring-1 ring-zinc-200">{t.initials}</div>
                         <div>
                           <div className="text-sm font-semibold text-zinc-800">{t.name}</div>
                           <div className="text-[11px] text-zinc-400">{t.role}</div>
@@ -566,7 +555,7 @@ export default function App() {
                   {[["Everyday User", "College student with diagnosed ADHD who uses their phone regularly for school"], ["Extreme User", "Someone who has tried many productivity systems and tools obsessively"], ["Low-Tech User", "Deliberately analog — grayscale phone, minimal apps, paper planner"], ["Clinical Stakeholder", "Therapist or coach who works with ADHD patients"], ["Non-Diagnosed", "High-stress user without a diagnosis — reveals what is universal vs. ADHD-specific"]].map(([label, desc]) => (
                     <div key={label} className="flex gap-3 items-start">
                       <Badge className="bg-zinc-100 text-zinc-600 border border-zinc-200 shrink-0">{label}</Badge>
-                      <span className="text-sm text-zinc-500 leading-relaxed pt-0.5">{desc}</span>
+                      <span className="text-sm text-zinc-600 leading-relaxed pt-0.5">{desc}</span>
                     </div>
                   ))}
                 </div>
@@ -577,7 +566,7 @@ export default function App() {
                   {[["1 min", "Warm-up", "Tell me about yourself and how you typically spend your day."], ["4 min", "Phone & Focus", "Walk me through the last time you tried to focus. What triggered picking up your phone?"], ["3 min", "Stress & Awareness", "How do you know when you're stressed? Have you ever tracked your mood or stress?"], ["2 min", "Needs & Wrap-up", "When does focus fall apart? What would a tool need to do — or avoid — to fit into your life?"]].map(([time, title, desc]) => (
                     <div key={title} className="flex gap-4 py-4 first:pt-0 last:pb-0">
                       <div className="w-14 shrink-0"><span className="inline-flex items-center justify-center rounded-md bg-brand-50 text-brand-600 text-[11px] font-bold px-2 py-0.5 border border-brand-100">{time}</span></div>
-                      <div><div className="text-sm font-semibold text-zinc-800">{title}</div><div className="mt-0.5 text-sm text-zinc-500 leading-relaxed">{desc}</div></div>
+                      <div><div className="text-sm font-semibold text-zinc-800">{title}</div><div className="mt-0.5 text-sm text-zinc-600 leading-relaxed">{desc}</div></div>
                     </div>
                   ))}
                 </div>
@@ -628,7 +617,7 @@ export default function App() {
                       <Card key={i} hover>
                         <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-300 mb-2">Question {i + 1}</div>
                         <p className="text-sm font-semibold text-zinc-800 leading-snug mb-2">{r.q}</p>
-                        <p className="text-sm text-zinc-500 leading-relaxed mb-4">{r.a}</p>
+                        <p className="text-sm text-zinc-600 leading-relaxed mb-4">{r.a}</p>
                         <div className="rounded-xl bg-gradient-to-r from-zinc-50 to-zinc-50/50 border border-zinc-200/60 px-4 py-3 flex gap-3">
                           <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-brand-500 shrink-0 pt-0.5">Insight</span>
                           <span className="text-[13px] text-zinc-600 leading-relaxed">{r.breakdown}</span>
@@ -644,14 +633,14 @@ export default function App() {
                           <audio controls src="/Call with Gabriel Turner.m4a" className="w-full max-w-md h-10" />
                           <div className="mt-4 rounded-xl bg-zinc-50 border border-zinc-200/60 p-4">
                             <p className="text-[13px] font-semibold text-zinc-800 mb-1">Breakdown</p>
-                            <p className="text-[13px] text-zinc-500 leading-relaxed">From the call: Gabriel relies heavily on Discord for school and startup coordination. He describes being &quot;attached&quot; to his computer — focus and distraction both happen on the same device. He has tried screen-time apps but stopped; existing tools feel too blunt or too easy to bypass.</p>
+                            <p className="text-[13px] text-zinc-600 leading-relaxed">From the call: Gabriel relies heavily on Discord for school and startup coordination. He describes being &quot;attached&quot; to his computer — focus and distraction both happen on the same device. He has tried screen-time apps but stopped; existing tools feel too blunt or too easy to bypass.</p>
                           </div>
                         </div>
                       ) : (
                         <>
                           <div className="mt-3 space-y-2">
                             {iv.observations.map((o, idx) => (
-                              <div key={idx} className="flex gap-3 items-start"><span className="text-zinc-300 shrink-0 mt-0.5">—</span><span className="text-sm text-zinc-500 leading-relaxed">{o}</span></div>
+                              <div key={idx} className="flex gap-3 items-start"><span className="text-zinc-300 shrink-0 mt-0.5">—</span><span className="text-sm text-zinc-600 leading-relaxed">{o}</span></div>
                             ))}
                           </div>
                           <div className="mt-6 border-t border-zinc-100 pt-6">
@@ -663,7 +652,7 @@ export default function App() {
                               </div>
                               <div className="border-t border-zinc-100 bg-white px-4 py-3">
                                 <p className="text-[13px] font-semibold text-zinc-800 mb-1">{iv.participant === "Hamza" ? "Remote video call between Meshal and Hamza" : "Participant touches hair and avoids eye contact mid-response"}</p>
-                                <p className="text-[13px] text-zinc-500 leading-relaxed">{iv.participant === "Hamza" ? <><strong>Opportunity:</strong> Any intervention must live within existing device habits rather than pull users away from them.</> : <><strong>Opportunity:</strong> Stress manifests physically before users consciously register it — pointing to ambient, body-signal-based detection.</>}</p>
+                                <p className="text-[13px] text-zinc-600 leading-relaxed">{iv.participant === "Hamza" ? <><strong>Opportunity:</strong> Any intervention must live within existing device habits rather than pull users away from them.</> : <><strong>Opportunity:</strong> Stress manifests physically before users consciously register it — pointing to ambient, body-signal-based detection.</>}</p>
                               </div>
                             </div>
                           </div>
@@ -685,7 +674,7 @@ export default function App() {
               {[{ initials: "RA", name: "Rayyan Ali" }, { initials: "MA", name: "Meshal Alothra" }, { initials: "AN", name: "Aryan Nagpal" }].map(m => (
                 <div key={m.initials} className="flex items-center gap-2">
                   <div className="h-4 w-4 rounded-sm" style={{ background: memberColorsRaw[m.initials].bg, border: `2px solid ${memberColorsRaw[m.initials].border}` }} />
-                  <span className="text-[13px] text-zinc-500">{m.name}</span>
+                  <span className="text-[13px] text-zinc-600">{m.name}</span>
                 </div>
               ))}
             </div>
@@ -711,7 +700,7 @@ export default function App() {
               <div className="mt-4 space-y-4">
                 {["Users rationalize distraction as logical — making hard blocks ineffective and friction-based design essential.", "Stress awareness is almost always retrospective — users rarely know they are overwhelmed until after the fact.", "Re-entry cost after breaks is a hidden and underserved pain point — the mental effort to rebuild context prevents people from resuming work."].map((text, i) => (
                   <div key={i} className="flex gap-4 items-start">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-purple-700 to-violet-600 text-xs font-bold text-white shrink-0 shadow-sm">{i + 1}</span>
+                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-100 text-zinc-700 text-xs font-bold shrink-0 ring-1 ring-zinc-200">{i + 1}</span>
                     <p className="text-[15px] leading-relaxed text-zinc-600">{text}</p>
                   </div>
                 ))}
@@ -726,14 +715,14 @@ export default function App() {
             <SectionHeading title="Key Insights" subtitle="Five main insights about user needs, synthesized from our interviews." badge="Synthesis" />
             <div className="space-y-4">
               {insights.map((insight, i) => (
-                <GlowCard key={i} className={`animate-fade-in stagger-${i + 1}`}>
+                <GlowCard key={i}>
                   <div className="flex gap-5 items-start">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 shrink-0 shadow-lg shadow-brand-500/20">
-                      <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d={insight.icon} /></svg>
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-100 ring-1 ring-zinc-200 shrink-0">
+                      <svg className="h-5 w-5 text-zinc-700" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d={insight.icon} /></svg>
                     </div>
                     <div>
                       <div className="text-base font-bold text-zinc-800 mb-1.5">{insight.title}</div>
-                      <p className="text-sm text-zinc-500 leading-relaxed">{insight.body}</p>
+                      <p className="text-sm text-zinc-600 leading-relaxed">{insight.body}</p>
                     </div>
                   </div>
                 </GlowCard>
@@ -791,7 +780,7 @@ export default function App() {
                   <p className="relative text-[15px] font-medium leading-relaxed text-white">&ldquo;How might we assist our users in lowering their stress levels caused by phone apps like social media platforms, specifically in a way that incentivizes less time on said apps for their own well-being while still making the assistance attractive towards the users?&rdquo;</p>
                 </div>
                 <SectionLabel>How the Statement Evolved</SectionLabel>
-                <p className="mt-3 text-[15px] leading-[1.8] text-zinc-500">
+                <p className="mt-3 text-[15px] leading-[1.8] text-zinc-600">
                   Our statement has changed because we are taking a slightly more direct approach with the incentives we have for our users. We are now not only focusing on how we can make this product functional and efficient, but how we can do so without making it a bother towards those we want to attract. We are thinking more from the users' side first. The original statement was about helping users <em className="text-zinc-700">recognize</em> the relationship between phone habits and stress; the evolved statement shifts toward actively <em className="text-zinc-700">assisting</em> them in lowering stress while keeping the product attractive and non-intrusive.
                 </p>
               </Card>
@@ -800,10 +789,10 @@ export default function App() {
                 <h3 className="text-xl font-bold text-zinc-800 mb-5">Three Solutions from Brainstorming</h3>
                 <div className="grid gap-5 sm:grid-cols-3">
                   {brainstormSolutions.map((sol, i) => (
-                    <GlowCard key={i} gradient={`${sol.tagColor.replace("from-", "from-").replace("to-", "to-")}`} className={`animate-fade-in-slow stagger-${i + 1}`}>
+                    <GlowCard key={i}>
                       <Badge className={`${sol.tagBg} mb-4`}>{sol.tag}</Badge>
                       <h4 className="text-lg font-bold text-zinc-800 mb-2">{sol.title}</h4>
-                      <p className="text-sm text-zinc-500 leading-relaxed">{sol.description}</p>
+                      <p className="text-sm text-zinc-600 leading-relaxed">{sol.description}</p>
                     </GlowCard>
                   ))}
                 </div>
@@ -811,7 +800,7 @@ export default function App() {
 
               <Card>
                 <SectionLabel>Brainstorm Outcome</SectionLabel>
-                <p className="text-sm text-zinc-500 mb-3">Our brainstorming session — ideas captured on the whiteboard during our team meeting.</p>
+                <p className="text-sm text-zinc-600 mb-3">Our brainstorming session — ideas captured on the whiteboard during our team meeting.</p>
                 <div className="mt-3"><ImageSlot src="/brainstorm-whiteboard.png" alt="Our brainstorming session whiteboard" /></div>
               </Card>
             </div>
@@ -829,7 +818,7 @@ export default function App() {
               </Card>
               <div className="space-y-6">
                 {lofiPrototypes.map((proto, i) => (
-                  <Card key={i} className={`animate-fade-in-slow stagger-${i + 1}`}>
+                  <Card key={i} className="">
                     <div className={`flex flex-col sm:flex-row gap-6`}>
                       {proto.imageUrl && <div className="sm:w-1/2"><ImageSlot src={proto.imageUrl} alt={`Lo-fi sketch: ${proto.title}`} className="min-h-[260px]" /></div>}
                       <div className={`${proto.imageUrl ? "sm:w-1/2" : ""} flex flex-col justify-center`}>
@@ -841,7 +830,7 @@ export default function App() {
                             <p className="text-sm font-medium text-zinc-700 leading-relaxed">{proto.question}</p>
                           </div>
                         </div>
-                        <p className="text-sm text-zinc-500 leading-relaxed">{proto.description}</p>
+                        <p className="text-sm text-zinc-600 leading-relaxed">{proto.description}</p>
                       </div>
                     </div>
                   </Card>
@@ -859,12 +848,12 @@ export default function App() {
                   <GlowCard>
                     <SectionLabel>Reflection 1</SectionLabel>
                     <p className="text-sm font-semibold text-zinc-800 mb-3">What do you like about each prototype?</p>
-                    <div className="rounded-xl bg-zinc-50 border border-zinc-200/60 px-4 py-3"><p className="text-sm text-zinc-500 leading-relaxed">Each prototype took a slightly different approach at answering our &ldquo;How Might We&rdquo; question, and each also showed correlation to the feedback we received from interviews. Some had to be whittled down during the brainstorming process, but overall each had important contributions and showed creativity from project members.</p></div>
+                    <div className="rounded-xl bg-zinc-50 border border-zinc-200/60 px-4 py-3"><p className="text-sm text-zinc-600 leading-relaxed">Each prototype took a slightly different approach at answering our &ldquo;How Might We&rdquo; question, and each also showed correlation to the feedback we received from interviews. Some had to be whittled down during the brainstorming process, but overall each had important contributions and showed creativity from project members.</p></div>
                   </GlowCard>
                   <GlowCard>
                     <SectionLabel>Reflection 2</SectionLabel>
                     <p className="text-sm font-semibold text-zinc-800 mb-3">What else would you like to explore?</p>
-                    <div className="rounded-xl bg-zinc-50 border border-zinc-200/60 px-4 py-3"><p className="text-sm text-zinc-500 leading-relaxed">We would like to explore a slight change in our &ldquo;How Might We...?&rdquo; statement, as our initial statement was more about how we could incentivize our users to be more considerate of their phone usage and stress. Now, after brainstorming and meeting together, the focus seems to have shifted towards not only incentivizing that focus, but helping to enforce it in a gentle and positive way through our product. We will likely be continuing to explore this shifted problem space, and so our statement can be updated to the following: &ldquo;How might we assist our users in lowering their stress levels caused by phone apps like social media platforms, specifically in a way that incentivizes less time on said apps for their own well-being while still making the assistance attractive towards the users?&rdquo;</p></div>
+                    <div className="rounded-xl bg-zinc-50 border border-zinc-200/60 px-4 py-3"><p className="text-sm text-zinc-600 leading-relaxed">We would like to explore a slight change in our &ldquo;How Might We...?&rdquo; statement, as our initial statement was more about how we could incentivize our users to be more considerate of their phone usage and stress. Now, after brainstorming and meeting together, the focus seems to have shifted towards not only incentivizing that focus, but helping to enforce it in a gentle and positive way through our product. We will likely be continuing to explore this shifted problem space, and so our statement can be updated to the following: &ldquo;How might we assist our users in lowering their stress levels caused by phone apps like social media platforms, specifically in a way that incentivizes less time on said apps for their own well-being while still making the assistance attractive towards the users?&rdquo;</p></div>
                   </GlowCard>
                 </div>
               </div>
@@ -888,12 +877,12 @@ export default function App() {
                   <p className="relative text-[15px] font-medium leading-relaxed text-white">&ldquo;How might we assist our users in lowering their stress levels caused by phone apps like social media platforms, specifically in a way that incentivizes less time on said apps for their own well-being while still making the assistance attractive towards the users?&rdquo;</p>
                 </div>
                 <SectionLabel>Why It Changed</SectionLabel>
-                <p className="mt-2 text-[15px] leading-[1.8] text-zinc-500">Our statement has changed because we are taking a more direct approach with the incentives we have for our users. We are now focusing not only on how to make this product functional, but how to do so without making it a bother. We are thinking more from the users' side first.</p>
+                <p className="mt-2 text-[15px] leading-[1.8] text-zinc-600">Our statement has changed because we are taking a more direct approach with the incentives we have for our users. We are now focusing not only on how to make this product functional, but how to do so without making it a bother. We are thinking more from the users' side first.</p>
               </Card>
 
               <div className="space-y-6">
                 {hifiPrototypes.map((proto, i) => (
-                  <Card key={i} className={`animate-fade-in-slow stagger-${i + 1}`}>
+                  <Card key={i} className="">
                     <Badge className={`${proto.ideaColor} border self-start mb-4`}>Idea: {proto.idea}</Badge>
                     <h3 className="text-xl font-bold text-zinc-800 mb-3">{proto.title}</h3>
                     <div className={`rounded-xl bg-gradient-to-r ${proto.accentColor} p-px mb-4`}>
@@ -902,11 +891,11 @@ export default function App() {
                         <p className="text-sm font-medium text-zinc-700 leading-relaxed">{proto.question}</p>
                       </div>
                     </div>
-                    <p className="text-sm text-zinc-500 leading-relaxed mb-5">{proto.description}</p>
+                    <p className="text-sm text-zinc-600 leading-relaxed mb-5">{proto.description}</p>
                     {proto.risk && (
                       <div className="rounded-xl bg-zinc-50 border border-zinc-200/60 px-5 py-4 mb-5 flex gap-3 items-start">
-                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-purple-700 to-violet-600 shrink-0 mt-0.5 shadow-sm">
-                          <svg className="h-3.5 w-3.5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-100 ring-1 ring-zinc-200 shrink-0 mt-0.5">
+                          <svg className="h-3.5 w-3.5 text-zinc-700" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
                         </div>
                         <div>
                           <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-400 mb-1">Risk Assessment</div>
@@ -986,7 +975,7 @@ export default function App() {
 
               {/* Design Process */}
               <div>
-                <h3 className="text-2xl font-extrabold text-zinc-900 tracking-tight mb-6">Design Process</h3>
+                <h3 className="text-2xl font-extrabold text-zinc-950 tracking-tight mb-6">Design Process</h3>
 
                 {/* Research Question */}
                 <Card className="mb-6">
@@ -1177,7 +1166,7 @@ export default function App() {
                           <Card key={i} hover>
                             <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-300 mb-2">Question {i + 1}</div>
                             <p className="text-sm font-semibold text-zinc-800 leading-snug mb-2">{item.q}</p>
-                            <p className="text-sm text-zinc-500 leading-relaxed">{item.a}</p>
+                            <p className="text-sm text-zinc-600 leading-relaxed">{item.a}</p>
                           </Card>
                         ))}
                       </div>
@@ -1216,10 +1205,10 @@ export default function App() {
                   ].map((row, i) => (
                     <GlowCard key={i}>
                       <div className="flex gap-3 items-start mb-3">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-purple-700 to-violet-600 text-xs font-bold text-white shrink-0 shadow-sm">{i + 1}</span>
+                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-100 text-zinc-700 text-xs font-bold shrink-0 ring-1 ring-zinc-200">{i + 1}</span>
                         <div className="text-base font-bold text-zinc-800">{row.insight}</div>
                       </div>
-                      <p className="text-sm text-zinc-500 leading-relaxed mb-4">{row.detail}</p>
+                      <p className="text-sm text-zinc-600 leading-relaxed mb-4">{row.detail}</p>
                       <div className="rounded-xl bg-gradient-to-r from-zinc-50 to-zinc-50/50 border border-zinc-200/60 px-4 py-3">
                         <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-brand-500 block mb-1">Recommendation</span>
                         <p className="text-[13px] text-zinc-600 leading-relaxed">{row.rec}</p>
@@ -1247,9 +1236,9 @@ export default function App() {
                     },
                   ].map((row, i) => (
                     <GlowCard key={i}>
-                      <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 text-xs font-bold text-white mb-4 shadow-sm">{i + 1}</span>
+                      <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-zinc-100 text-zinc-700 text-xs font-bold mb-4 ring-1 ring-zinc-200">{i + 1}</span>
                       <div className="text-sm font-bold text-zinc-800 mb-2 leading-snug">{row.title}</div>
-                      <p className="text-[13px] text-zinc-500 leading-relaxed">{row.body}</p>
+                      <p className="text-[13px] text-zinc-600 leading-relaxed">{row.body}</p>
                     </GlowCard>
                   ))}
                 </div>
