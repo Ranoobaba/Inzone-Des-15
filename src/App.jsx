@@ -324,68 +324,6 @@ const prototypeParticipants = [
   },
 ];
 
-/** Insights, quotes, recommendations, and reflection — Hamza & Hashim (Meshal); rendered below interview tabs */
-const prototypeHamzaHashimSynthesis = {
-  byParticipant: [
-    {
-      name: "Hamza",
-      insights: [
-        {
-          title: "Scrolling-based interventions can reinforce the habit they target",
-          body: "Screen time tools that use scrolling mechanics reinforce the habit they're supposed to fix. Hamza's current app uses a scrolling game as its intervention — the same motion as Instagram. Heartlock's cognitive games break that pattern physically. A badly designed intervention can make the problem worse instead of better.",
-        },
-        {
-          title: "The breathing guide created calm, not just distraction",
-          body: "We expected games to be the main draw, but Hamza's strongest reaction was to the breathing guide. He said the noise shut off and connected it to his Taekwondo recovery. Games reset attention; breathing changed how his body actually felt — a different outcome for overstimulation.",
-        },
-        {
-          title: "Students want tools on devices they already own",
-          body: "As soon as we showed the wearable concept, Hamza asked if it works on Apple Watch. He already wears one for training and has no interest in extra hardware. If Heartlock requires a new device, many students will skip it regardless of feature quality.",
-        },
-      ],
-      keyQuote:
-        "\"My current app literally has a scrolling game. Are you trying to get me off scrolling by making me scroll more? The breathing guide here actually made me relax. All the noise just shut off.\"",
-    },
-    {
-      name: "Hashim",
-      insights: [
-        {
-          title: "Health data without education is just noise",
-          body: "Hashim liked seeing BPM but didn't know what it meant. Unlike Hamza, who has athletic context for heart rate, Hashim had none. Without teaching users what the numbers mean, health tracking is weak for anyone who isn't already health-literate.",
-        },
-        {
-          title: "Visual accessibility drives daily use",
-          body: "Hashim wears glasses and stares at screens all day. He liked Prototype 1's dark, clean look but found 2 and 3 visually overwhelming — \"take the brain of three and put it in the body of one.\" For heavy screen users, a busy colorful interface is a usability barrier, not just preference.",
-        },
-        {
-          title: "Laptop / gaming stress is an underserved audience",
-          body: "Hashim asked repeatedly if Heartlock works on PC — that's where his stress lives. He games for hours, gets tilted, rage-queues, and has nothing to intervene. Most screen-time apps target phone and social media; students whose stress comes from a laptop are underserved.",
-        },
-      ],
-      keyQuote:
-        "\"Take the brain of Prototype 3 and put it in the body of Prototype 1. You're missing gamers — we sit at desks for hours stressed and nothing is built for us.\"",
-    },
-  ],
-  recommendations: [
-    {
-      title: "Prioritize Prototype 3 and make the breathing guide core",
-      body: "Both participants had their strongest reaction to the breathing guide. Hamza said it was what he'd come back for; Hashim wanted it after gaming. It should be front and center, not buried behind games.",
-    },
-    {
-      title: "Add onboarding that explains what health data means",
-      body: "Hashim said BPM was meaningless without context. Hamza also suggested onboarding. A short walkthrough on HRV, heart rate zones, and a stress index would make the health report useful instead of confusing.",
-    },
-    {
-      title: "Add visual customization including dark mode",
-      body: "Hashim wanted Prototype 3's features with Prototype 1's look. For students who wear glasses or spend long hours on screens, bright interfaces are a barrier — themes and dark mode affect retention.",
-    },
-  ],
-  reflection:
-    "If we ran this study again we would ask participants upfront what tools they already use for screen time or stress. Hamza's comparison to his scrolling game app was one of our best insights — it only came up because he volunteered it.",
-};
-
-const { byParticipant: prototypeSynthesisParticipants, recommendations: prototypeSynthesisRecommendations, reflection: prototypeSynthesisReflection } = prototypeHamzaHashimSynthesis;
-
 /* ═══════════════════════════════════ COMPONENTS ═══════════════════════════════════ */
 
 function Badge({ children, className = "" }) {
@@ -885,6 +823,10 @@ export default function App() {
           <div className="animate-fade-in">
             <SectionHeading title="Lo-fi Prototypes" subtitle="Paper sketches and wireframes testing our three ideas. Each prototype answers a specific question." badge="Phase 2" />
             <div className="space-y-8">
+              <Card>
+                <SectionLabel>Lo-fi Prototype Process</SectionLabel>
+                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">We translated our three brainstormed ideas — Stress Lock, Heartlock, and a Stress Monitoring Band — into paper sketches so we could test core flows quickly and cheaply before investing in design. Each sketch was scoped to answer one specific question about that idea, and we walked through them as a team to surface assumptions early.</p>
+              </Card>
               <div className="space-y-6">
                 {lofiPrototypes.map((proto, i) => (
                   <Card key={i} className={`animate-fade-in-slow stagger-${i + 1}`}>
@@ -905,6 +847,11 @@ export default function App() {
                   </Card>
                 ))}
               </div>
+
+              <Card>
+                <SectionLabel>Lo-fi Takeaways</SectionLabel>
+                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">The sketches confirmed Heartlock's full workflow as the strongest direction while showing Stress Lock's gentle nudges and the band's biometric angle each had distinct value. Paper prototyping forced us to make hard scope decisions before locking into a single concept.</p>
+              </Card>
 
               <div>
                 <h3 className="text-xl font-bold text-zinc-800 mb-5">Reflection Questions</h3>
@@ -930,6 +877,10 @@ export default function App() {
           <div className="animate-fade-in">
             <SectionHeading title="Hi-fi Prototypes" subtitle="Refined prototypes with detailed mockups." badge="Phase 2" />
             <div className="space-y-8">
+              <Card>
+                <SectionLabel>Hi-fi Prototype Process</SectionLabel>
+                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">We translated each lo-fi sketch into an interactive Netlify build so participants could actually feel the friction, gameplay, and BPM display in the moment. Each hi-fi was scoped to one specific design question — autonomy (Stress Lock), engagement (Heartlock), and biometric utility (Stress Monitoring Band) — and the live demos linked from each prototype below served as the testable artefacts during usability sessions.</p>
+              </Card>
               <Card>
                 <SectionLabel>Revisited &ldquo;How Might We...?&rdquo; Statement</SectionLabel>
                 <div className="mt-3 relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-5 py-4 mb-5 shadow-lg shadow-brand-500/15">
@@ -980,6 +931,10 @@ export default function App() {
                   </Card>
                 ))}
               </div>
+              <Card>
+                <SectionLabel>Hi-fi Takeaways</SectionLabel>
+                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">Building all three as live demos let us run side-by-side usability tests where participants directly compared experiences, and Heartlock's full system emerged as the clear winner. The breathing guide and BPM context surprised us as the elements participants most wanted to keep — not the games we expected to lead with.</p>
+              </Card>
             </div>
           </div>
         )}
@@ -1174,6 +1129,22 @@ export default function App() {
               </div>
             </Card>
 
+            <Card className="mb-6">
+              <SectionLabel>Usability Testing Process</SectionLabel>
+              <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">We ran four moderated usability sessions — two in person (Jayshan, Diego) and two over remote video call (Hamza, Hashim). Each participant used a stressful app for one minute, then tested Stress Lock and Heartlock back-to-back, and finally discussed the Stress Monitoring Band concept while we captured reactions, BPM impressions, and side-by-side preferences.</p>
+            </Card>
+
+            <div className="grid gap-4 sm:grid-cols-2 mb-8">
+              <Card>
+                <SectionLabel>Participant Group</SectionLabel>
+                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">Four college students aged 18&ndash;24 across freshman through senior years, spanning sciences, media studies, psychology &amp; data science, and economics &amp; math. All were heavy phone users (4&ndash;7 hours daily) who self-identified at least one stressful app, and one participant added heavy laptop and ranked-gaming use as his primary stress source.</p>
+              </Card>
+              <Card>
+                <SectionLabel>Design Research Method</SectionLabel>
+                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">Comparative moderated usability testing with a think-aloud protocol followed by a structured debrief interview. Each participant performed the same one-minute stress-trigger task (Instagram or Twitter) before each prototype to standardize emotional state across conditions, allowing fair side-by-side comparison.</p>
+              </Card>
+            </div>
+
             <div className="mb-8 flex gap-1 border-b border-zinc-200 flex-wrap">
               {prototypeParticipants.map((p, idx) => (
                 <button
@@ -1218,49 +1189,75 @@ export default function App() {
 
             <div className="mt-16 pt-12 border-t border-zinc-200">
               <SectionHeading
-                title="Prototype Interview Synthesis"
-                subtitle="Team takeaways from Meshal's remote prototype sessions with Hamza and Hashim — separate from the raw interview notes above."
+                title="Usability Testing Synthesis"
+                subtitle="Cross-cutting insights from all four prototype sessions, recommendations, what we learned from the human-centered design process, and what we would do differently."
                 badge="Synthesis"
               />
 
-              <div className="space-y-10">
-                {prototypeSynthesisParticipants.map(row => (
-                  <div key={row.name}>
-                    <h3 className="text-xl font-bold text-zinc-800 mb-4">{row.name}</h3>
-                    <SectionLabel>Insights</SectionLabel>
-                    <div className="mt-3 space-y-3">
-                      {row.insights.map(ins => (
-                        <GlowCard key={ins.title}>
-                          <div className="text-base font-bold text-zinc-800 mb-1.5">{ins.title}</div>
-                          <p className="text-sm text-zinc-500 leading-relaxed">{ins.body}</p>
-                        </GlowCard>
-                      ))}
-                    </div>
-                    <div className="mt-4 rounded-2xl border-l-4 border-brand-400 bg-brand-50/40 border border-brand-100 px-5 py-4">
-                      <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-brand-500 mb-2">Key Quote</div>
-                      <p className="text-[15px] text-zinc-700 leading-relaxed italic">{row.keyQuote}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <Card className="mt-10">
-                <SectionLabel>Recommendations</SectionLabel>
-                <div className="mt-4 space-y-4">
-                  {prototypeSynthesisRecommendations.map((rec, i) => (
-                    <div key={rec.title} className="flex gap-4 items-start">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-purple-700 to-violet-600 text-xs font-bold text-white shrink-0 shadow-sm">{i + 1}</span>
-                      <div>
-                        <div className="text-sm font-semibold text-zinc-800 mb-1">{rec.title}</div>
-                        <p className="text-sm text-zinc-500 leading-relaxed">{rec.body}</p>
+              <div>
+                <h3 className="text-xl font-bold text-zinc-800 mb-5">Three Key Insights &amp; Recommendations</h3>
+                <div className="space-y-4">
+                  {[
+                    {
+                      insight: "Vitals-first feedback beats hard-block gates.",
+                      detail: "Across all four sessions, participants preferred Heartlock's BPM display over Stress Lock's password-style gate. Jayshan and Diego both compared Stress Lock to Apple Screen Time and said they would dismiss it without changing behavior; Hamza said the BPM strain meter made scrolling \"feel measurable\" in a way his current screen-time app never did.",
+                      rec: "Lead with biometric feedback as the primary friction surface and demote password / timer gates to a secondary fallback — the body data is what changed how participants felt about their own usage."
+                    },
+                    {
+                      insight: "Wearables already on the wrist beat new hardware.",
+                      detail: "Three of four participants pushed back on the dedicated band concept. Diego asked about price and redundancy with his existing watch; Hamza asked if it works on Apple Watch (\"I don't want to wear two things\"); Hashim asked repeatedly about PC support because his real stress is gaming, not phone use.",
+                      rec: "Replace the dedicated band with an Apple Watch / smartwatch companion module, and add a PC or browser-extension variant so gamers and laptop-heavy users aren't excluded from the stress-detection layer."
+                    },
+                    {
+                      insight: "Health data is meaningless without onboarding.",
+                      detail: "Hashim liked seeing BPM but said \"if it says 85 I need to know if that's good or bad.\" Hamza had Taekwondo context that made the numbers land; Hashim had none. Without teaching users what the metrics mean, the health layer is weak for anyone who isn't already health-literate.",
+                      rec: "Add a short onboarding flow that explains BPM, HRV, and a stress index in ranges contextualized to the user's own baseline — the data layer needs interpretation, not just display."
+                    },
+                  ].map((row, i) => (
+                    <GlowCard key={i}>
+                      <div className="flex gap-3 items-start mb-3">
+                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-purple-700 to-violet-600 text-xs font-bold text-white shrink-0 shadow-sm">{i + 1}</span>
+                        <div className="text-base font-bold text-zinc-800">{row.insight}</div>
                       </div>
-                    </div>
+                      <p className="text-sm text-zinc-500 leading-relaxed mb-4">{row.detail}</p>
+                      <div className="rounded-xl bg-gradient-to-r from-zinc-50 to-zinc-50/50 border border-zinc-200/60 px-4 py-3">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-brand-500 block mb-1">Recommendation</span>
+                        <p className="text-[13px] text-zinc-600 leading-relaxed">{row.rec}</p>
+                      </div>
+                    </GlowCard>
                   ))}
                 </div>
-                <div className="mt-6 border-t border-zinc-100 pt-6">
-                  <SectionLabel>Reflection</SectionLabel>
-                  <p className="mt-2 text-sm text-zinc-500 leading-relaxed">{prototypeSynthesisReflection}</p>
+              </div>
+
+              <div className="mt-12">
+                <h3 className="text-xl font-bold text-zinc-800 mb-5">Three Things We Learned from the Human-Centered Design Process</h3>
+                <div className="grid gap-4 sm:grid-cols-3">
+                  {[
+                    {
+                      title: "Standardizing the trigger task made comparisons honest.",
+                      body: "Putting every participant through the same one-minute stress prime (Instagram or Twitter) before each prototype kept their emotional state comparable. Without it, our side-by-side preference data would have been noise.",
+                    },
+                    {
+                      title: "Asking what tools people already use was our highest-yield question.",
+                      body: "Hamza's \"scrolling-game irony\" insight only surfaced because he volunteered context about his existing screen-time app. Context about prior workarounds turned out to be more valuable than direct questions about our prototypes.",
+                    },
+                    {
+                      title: "Edge users drove the most actionable recommendations.",
+                      body: "The gamer (Hashim), the glasses-wearer (Hashim again), and the smartwatch wearers (Hamza, Diego) produced the PC-support, dark-mode, and Apple-Watch insights. Designing for the average user would have hidden all three.",
+                    },
+                  ].map((row, i) => (
+                    <GlowCard key={i}>
+                      <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 text-xs font-bold text-white mb-4 shadow-sm">{i + 1}</span>
+                      <div className="text-sm font-bold text-zinc-800 mb-2 leading-snug">{row.title}</div>
+                      <p className="text-[13px] text-zinc-500 leading-relaxed">{row.body}</p>
+                    </GlowCard>
+                  ))}
                 </div>
+              </div>
+
+              <Card className="mt-12">
+                <SectionLabel>What We Would Do Differently</SectionLabel>
+                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">If we ran this study again we would ask participants up front, before any prototype, what tools they currently use for screen time or stress and what platform their stress actually lives on. Hamza's comparison to his existing scrolling-game app and Hashim's PC-gaming stress only surfaced because they volunteered the context — knowing it earlier would have let us tailor each session, probe more deeply on each prototype against their existing workaround, and recruit a more representative sample of laptop-stressed users instead of treating everyone as a phone-first scroller.</p>
               </Card>
             </div>
           </div>
