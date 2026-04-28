@@ -998,6 +998,24 @@ export default function App() {
                 </p>
               </Card>
 
+              {/* Human-Centered Design Learnings */}
+              <Card>
+                <SectionLabel>Three Things We Learned From Human-Centered Design</SectionLabel>
+                <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                  {[
+                    ["1", "Prototype Fidelity Matters", "We learned that there are multiple kinds of prototypes. At first we thought we just needed one prototype, but the process showed us why lo-fi prototypes help test the core idea early while hi-fi prototypes help validate how the product actually feels."],
+                    ["2", "Usability Testing Reveals Gaps", "Usability testing is a major part of product design because users find gaps in intuition that designers often miss. Watching people use the prototype helped us see where the experience needed to be clearer, simpler, or more useful."],
+                    ["3", "Interviews Need Structure", "We learned that the interview process works best when participants have clear character profiles and the questions stay standardized. That made it easier to compare responses, identify patterns, and connect interview evidence back to our design decisions."],
+                  ].map(([num, title, body]) => (
+                    <div key={num} className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5">
+                      <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 text-sm font-bold text-white shadow-sm">{num}</div>
+                      <h4 className="mb-2 text-base font-bold text-zinc-800">{title}</h4>
+                      <p className="text-sm leading-relaxed text-zinc-600">{body}</p>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+
               {/* Design Process */}
               <div>
                 <h3 className="text-2xl font-extrabold text-zinc-950 tracking-tight mb-6">Design Process</h3>
