@@ -125,9 +125,9 @@ const lofiPrototypes = [
 ];
 
 const hifiPrototypes = [
-  { idea: "Most Likely to Delight", ideaColor: "bg-amber-50 text-amber-700 border-amber-200", accentColor: "from-amber-500 to-orange-500", title: "Stress Lock", question: "How might we limit the stress that our users face without directly enforcing a change of habit, but rather helping the user towards making the healthier habit themselves?", description: "We create notifiers for the user so that they feel that same incentive to not stay too long on a stressful app, and make the incentive stronger or weaker with the user's preferences. The system respects user autonomy while providing gentle, customizable nudges toward healthier behavior.", liveUrl: "https://heartlocker2.netlify.app", risk: "The notification system needs to strike a precise balance between being noticeable enough to work and subtle enough not to annoy. If the friction is too weak, users ignore it; if too strong, it feels like the hard blocks users already reject." },
-  { idea: "Most Likely to Work", ideaColor: "bg-emerald-50 text-emerald-700 border-emerald-200", accentColor: "from-emerald-500 to-teal-500", title: "Heartlock", question: "How can we make this product attractive to our users when the overall assistance is with something very personal like someone's stress?", description: "We make the assistance indirect, embedding games within each app that users have identified as stress-inducing. The games serve as a stress reliever delivered at an optimal time — right when the user is about to enter a high-stress digital environment. The full workflow includes app selection, threshold configuration, puzzle gates, leaderboards, and charity donation incentives.", liveUrl: "https://heartlocker.netlify.app", risk: "Embedding games within app-opening flows risks becoming a distraction in itself. If the puzzles are too easy they lose friction value; if too hard they frustrate users. The gamification (leaderboards, donations) could also shift motivation from intrinsic self-care to extrinsic competition, undermining the core goal." },
-  { idea: "Dark Horse", ideaColor: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200", accentColor: "from-fuchsia-500 to-purple-500", title: "Stress Monitoring Band", question: "How can we work off of current stress relief devices?", description: "Working off the heart rate monitoring capabilities of Apple Watches and similar wearables, we designed a cuff that fits around the arm and acts as a dedicated stress monitoring device. It takes into account important personalized information about each user to provide proactive, real-time stress alerts.", liveUrl: "https://heartlocker3.netlify.app", risk: "Relies on biometric accuracy that varies significantly across individuals — heart rate alone is an unreliable proxy for stress. The dedicated hardware adds cost and friction to adoption, and users may find wearing an extra device impractical compared to leveraging sensors already on their wrist." },
+  { idea: "Most Likely to Delight", ideaColor: "bg-amber-50 text-amber-700 border-amber-200", accentColor: "from-amber-500 to-orange-500", title: "Stress Lock", question: "How might we limit the stress that our users face without directly enforcing a change of habit, but rather helping the user towards making the healthier habit themselves?", description: "We create notifiers for the user so that they feel that same incentive to not stay too long on a stressful app, and make the incentive stronger or weaker with the user's preferences. The system respects user autonomy while providing gentle, customizable nudges toward healthier behavior.", imageUrl: "/stress-lock-hifi.png", liveUrl: "https://heartlocker2.netlify.app", risk: "The notification system needs to strike a precise balance between being noticeable enough to work and subtle enough not to annoy. If the friction is too weak, users ignore it; if too strong, it feels like the hard blocks users already reject." },
+  { idea: "Most Likely to Work", ideaColor: "bg-emerald-50 text-emerald-700 border-emerald-200", accentColor: "from-emerald-500 to-teal-500", title: "Heartlock", question: "How can we make this product attractive to our users when the overall assistance is with something very personal like someone's stress?", description: "We make the assistance indirect, embedding games within each app that users have identified as stress-inducing. The games serve as a stress reliever delivered at an optimal time — right when the user is about to enter a high-stress digital environment. The full workflow includes app selection, threshold configuration, puzzle gates, leaderboards, and charity donation incentives.", imageUrl: "/heartlock-hifi.png", liveUrl: "https://heartlocker.netlify.app", risk: "Embedding games within app-opening flows risks becoming a distraction in itself. If the puzzles are too easy they lose friction value; if too hard they frustrate users. The gamification (leaderboards, donations) could also shift motivation from intrinsic self-care to extrinsic competition, undermining the core goal." },
+  { idea: "Dark Horse", ideaColor: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200", accentColor: "from-fuchsia-500 to-purple-500", title: "Stress Monitoring Band", question: "How can we work off of current stress relief devices?", description: "Working off the heart rate monitoring capabilities of Apple Watches and similar wearables, we designed a cuff that fits around the arm and acts as a dedicated stress monitoring device. It takes into account important personalized information about each user to provide proactive, real-time stress alerts.", imageUrl: "/stress-band-hifi.png", liveUrl: "https://heartlocker3.netlify.app", risk: "Relies on biometric accuracy that varies significantly across individuals — heart rate alone is an unreliable proxy for stress. The dedicated hardware adds cost and friction to adoption, and users may find wearing an extra device impractical compared to leveraging sensors already on their wrist." },
 ];
 
 /** Prototype testing sessions — Stress Lock, Heartlock, and vitals concept discussion */
@@ -734,8 +734,14 @@ export default function App() {
         {/* ═══════════ PROBLEM STATEMENT ═══════════ */}
         {active === "Problem Statement" && (
           <div className="animate-fade-in">
-            <SectionHeading title="Problem Statement" subtitle="Synthesized from research findings. No solutions — only the problem." badge="Synthesis" />
+            <SectionHeading title="Problem Statement" subtitle="Synthesized from research findings, with the problem and HMW statement shown separately." badge="Synthesis" />
             <div className="space-y-6">
+              <Card>
+                <SectionLabel>Problem Statement</SectionLabel>
+                <p className="text-[15px] leading-[1.85] text-zinc-600">
+                  People with ADHD and attention difficulties often use stressful phone apps as a rationalized response to mental fatigue, but this short-term escape increases stress, breaks focus, and makes it harder to return to meaningful work. Because the relationship between phone use, stress, and focus loss is not visible in the moment, users stay caught in a cycle of distraction, guilt, and avoidance instead of making intentional choices.
+                </p>
+              </Card>
               <Card>
                 <SectionLabel>Background</SectionLabel>
                 <p className="text-[15px] leading-[1.85] text-zinc-600">
@@ -756,7 +762,7 @@ export default function App() {
               <div className="relative overflow-hidden rounded-2xl bg-[#2d0a4e] px-8 py-12 text-center">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-purple-500/25 blur-[100px]" />
                 <div className="relative">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/40 mb-5">How Might We</div>
+                  <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/40 mb-5">How Might We Statement</div>
                   <p className="mx-auto max-w-2xl text-xl sm:text-2xl font-bold leading-relaxed text-white">&ldquo;How might we help people with attention difficulties recognize the real-time relationship between their phone habits and their stress — so they can make more intentional choices throughout the day?&rdquo;</p>
                 </div>
               </div>
@@ -871,6 +877,10 @@ export default function App() {
                 <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">We translated each lo-fi sketch into an interactive Netlify build so participants could actually feel the friction, gameplay, and BPM display in the moment. Each hi-fi was scoped to one specific design question — autonomy (Stress Lock), engagement (Heartlock), and biometric utility (Stress Monitoring Band) — and the live demos linked from each prototype below served as the testable artefacts during usability sessions.</p>
               </Card>
               <Card>
+                <SectionLabel>Lo-fi Prototype Takeaways</SectionLabel>
+                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">The lo-fi sketches showed that Heartlock had the strongest full workflow, but Stress Lock's gentle nudges and the Stress Monitoring Band's biometric concept were still valuable directions to test. The main takeaway was that the hi-fi prototypes needed to make the stress intervention feel useful in the moment without turning into another interruption.</p>
+              </Card>
+              <Card>
                 <SectionLabel>Revisited &ldquo;How Might We...?&rdquo; Statement</SectionLabel>
                 <div className="mt-3 relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-5 py-4 mb-5 shadow-lg shadow-brand-500/15">
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
@@ -883,40 +893,47 @@ export default function App() {
               <div className="space-y-6">
                 {hifiPrototypes.map((proto, i) => (
                   <Card key={i} className="">
-                    <Badge className={`${proto.ideaColor} border self-start mb-4`}>Idea: {proto.idea}</Badge>
-                    <h3 className="text-xl font-bold text-zinc-800 mb-3">{proto.title}</h3>
-                    <div className={`rounded-xl bg-gradient-to-r ${proto.accentColor} p-px mb-4`}>
-                      <div className="rounded-[11px] bg-white px-4 py-3">
-                        <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-zinc-400 block mb-1">Question Answered</span>
-                        <p className="text-sm font-medium text-zinc-700 leading-relaxed">{proto.question}</p>
+                    <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+                      <div className="overflow-hidden rounded-xl border border-zinc-200 bg-white">
+                        <img src={proto.imageUrl} alt={`Hi-fi prototype: ${proto.title}`} className="w-full max-h-[360px] object-contain" />
+                      </div>
+                      <div>
+                        <Badge className={`${proto.ideaColor} border self-start mb-4`}>Idea: {proto.idea}</Badge>
+                        <h3 className="text-xl font-bold text-zinc-800 mb-3">{proto.title}</h3>
+                        <div className={`rounded-xl bg-gradient-to-r ${proto.accentColor} p-px mb-4`}>
+                          <div className="rounded-[11px] bg-white px-4 py-3">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-zinc-400 block mb-1">Question Asked</span>
+                            <p className="text-sm font-medium text-zinc-700 leading-relaxed">{proto.question}</p>
+                          </div>
+                        </div>
+                        <p className="text-sm text-zinc-600 leading-relaxed mb-5">{proto.description}</p>
+                        {proto.risk && (
+                          <div className="rounded-xl bg-zinc-50 border border-zinc-200/60 px-5 py-4 mb-5 flex gap-3 items-start">
+                            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-100 ring-1 ring-zinc-200 shrink-0 mt-0.5">
+                              <svg className="h-3.5 w-3.5 text-zinc-700" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                            </div>
+                            <div>
+                              <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-400 mb-1">Risk Assessment</div>
+                              <p className="text-[13px] text-zinc-600 leading-relaxed">{proto.risk}</p>
+                            </div>
+                          </div>
+                        )}
+                        {proto.liveUrl && (
+                          <a href={proto.liveUrl} target="_blank" rel="noopener noreferrer" className="relative overflow-hidden group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-6 py-4 text-white shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30 hover:scale-[1.02] transition-all">
+                            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
+                            <div className="relative flex items-center gap-3">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+                                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                              </div>
+                              <div>
+                                <div className="text-sm font-bold">Click here for the demo</div>
+                                <div className="text-xs text-white/60">{proto.liveUrl.replace("https://", "")}</div>
+                              </div>
+                            </div>
+                          </a>
+                        )}
                       </div>
                     </div>
-                    <p className="text-sm text-zinc-600 leading-relaxed mb-5">{proto.description}</p>
-                    {proto.risk && (
-                      <div className="rounded-xl bg-zinc-50 border border-zinc-200/60 px-5 py-4 mb-5 flex gap-3 items-start">
-                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-100 ring-1 ring-zinc-200 shrink-0 mt-0.5">
-                          <svg className="h-3.5 w-3.5 text-zinc-700" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
-                        </div>
-                        <div>
-                          <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-400 mb-1">Risk Assessment</div>
-                          <p className="text-[13px] text-zinc-600 leading-relaxed">{proto.risk}</p>
-                        </div>
-                      </div>
-                    )}
-                    {proto.liveUrl && (
-                      <a href={proto.liveUrl} target="_blank" rel="noopener noreferrer" className="relative overflow-hidden group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-6 py-4 text-white shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30 hover:scale-[1.02] transition-all">
-                        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
-                        <div className="relative flex items-center gap-3">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
-                            <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
-                          </div>
-                          <div>
-                            <div className="text-sm font-bold">Click here for the demo</div>
-                            <div className="text-xs text-white/60">{proto.liveUrl.replace("https://", "")}</div>
-                          </div>
-                        </div>
-                      </a>
-                    )}
                   </Card>
                 ))}
               </div>
@@ -959,6 +976,14 @@ export default function App() {
               {/* Problem Statement */}
               <Card>
                 <SectionLabel>Problem Statement</SectionLabel>
+                <p className="text-[15px] leading-[1.85] text-zinc-600">
+                  People with ADHD and attention difficulties often use stressful phone apps as a rationalized response to mental fatigue, but this short-term escape increases stress, breaks focus, and makes it harder to return to meaningful work. Because the relationship between phone use, stress, and focus loss is not visible in the moment, users stay caught in a cycle of distraction, guilt, and avoidance instead of making intentional choices.
+                </p>
+              </Card>
+
+              {/* How Might We */}
+              <Card>
+                <SectionLabel>How Might We Statement</SectionLabel>
                 <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-5 py-4 shadow-lg shadow-brand-500/15">
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
                   <p className="relative text-[15px] font-medium leading-relaxed text-white">&ldquo;How might we help people with attention difficulties recognize the real-time relationship between their phone habits and their stress — so they can make more intentional choices throughout the day?&rdquo;</p>
