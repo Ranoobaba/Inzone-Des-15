@@ -759,8 +759,8 @@ export default function App() {
                   <p className="text-[15px] leading-relaxed text-zinc-600">The inability to sustain focus leads to chronic stress, reduced output, and a persistent sense of failure. Because the connection between phone habits and stress is invisible in real time, users remain in recurring cycles of distraction, guilt, and avoidance.</p>
                 </Card>
               </div>
-              <div className="relative overflow-hidden rounded-2xl bg-[#2d0a4e] px-8 py-12 text-center">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-purple-500/25 blur-[100px]" />
+              <div className="relative overflow-hidden rounded-2xl bg-[#0f2a44] px-8 py-12 text-center">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-blue-500/25 blur-[100px]" />
                 <div className="relative">
                   <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/40 mb-5">How Might We Statement</div>
                   <p className="mx-auto max-w-2xl text-xl sm:text-2xl font-bold leading-relaxed text-white">&ldquo;How might we help people with attention difficulties recognize the real-time relationship between their phone habits and their stress — so they can make more intentional choices throughout the day?&rdquo;</p>
@@ -872,17 +872,17 @@ export default function App() {
           <div className="animate-fade-in">
             <SectionHeading title="Hi-fi Prototypes" subtitle="Refined prototypes with detailed mockups." badge="Phase 2" />
             <div className="space-y-8">
-              <Card>
-                <SectionLabel>Hi-fi Prototype Process</SectionLabel>
-                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">We translated each lo-fi sketch into an interactive Netlify build so participants could actually feel the friction, gameplay, and BPM display in the moment. Each hi-fi was scoped to one specific design question — autonomy (Stress Lock), engagement (Heartlock), and biometric utility (Stress Monitoring Band) — and the live demos linked from each prototype below served as the testable artefacts during usability sessions.</p>
-              </Card>
-              <Card>
-                <SectionLabel>Lo-fi Prototype Takeaways</SectionLabel>
-                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600">The lo-fi sketches showed that Heartlock had the strongest full workflow, but Stress Lock's gentle nudges and the Stress Monitoring Band's biometric concept were still valuable directions to test. The main takeaway was that the hi-fi prototypes needed to make the stress intervention feel useful in the moment without turning into another interruption.</p>
-              </Card>
+              <div className="rounded-2xl border p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)]" style={{ backgroundColor: "#0f2a44", borderColor: "rgba(30, 58, 138, 0.3)" }}>
+                <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-blue-200/70">Hi-fi Prototype Process</div>
+                <p className="mt-2 text-[15px] leading-relaxed text-white/80">We translated each lo-fi sketch into an interactive Netlify build so participants could actually feel the friction, gameplay, and BPM display in the moment. Each hi-fi was scoped to one specific design question — autonomy (Stress Lock), engagement (Heartlock), and biometric utility (Stress Monitoring Band) — and the live demos linked from each prototype below served as the testable artefacts during usability sessions.</p>
+              </div>
+              <div className="rounded-2xl border p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)]" style={{ backgroundColor: "#0f2a44", borderColor: "rgba(30, 58, 138, 0.3)" }}>
+                <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-blue-200/70">Lo-fi Prototype Takeaways</div>
+                <p className="mt-2 text-[15px] leading-relaxed text-white/80">The lo-fi sketches showed that Heartlock had the strongest full workflow, but Stress Lock's gentle nudges and the Stress Monitoring Band's biometric concept were still valuable directions to test. The main takeaway was that the hi-fi prototypes needed to make the stress intervention feel useful in the moment without turning into another interruption.</p>
+              </div>
               <Card>
                 <SectionLabel>Revisited &ldquo;How Might We...?&rdquo; Statement</SectionLabel>
-                <div className="mt-3 relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-5 py-4 mb-5 shadow-lg shadow-brand-500/15">
+                <div className="mt-3 relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-950 to-blue-800 px-5 py-4 mb-5 shadow-lg shadow-blue-900/20">
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
                   <p className="relative text-[15px] font-medium leading-relaxed text-white">&ldquo;How might we assist our users in lowering their stress levels caused by phone apps like social media platforms, specifically in a way that incentivizes less time on said apps for their own well-being while still making the assistance attractive towards the users?&rdquo;</p>
                 </div>
@@ -919,7 +919,7 @@ export default function App() {
                           </div>
                         )}
                         {proto.liveUrl && (
-                          <a href={proto.liveUrl} target="_blank" rel="noopener noreferrer" className="relative overflow-hidden group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-6 py-4 text-white shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30 hover:scale-[1.02] transition-all">
+                          <a href={proto.liveUrl} target="_blank" rel="noopener noreferrer" className="relative overflow-hidden group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-blue-950 to-blue-800 px-6 py-4 text-white shadow-lg shadow-blue-900/20 hover:shadow-blue-900/30 hover:scale-[1.02] transition-all">
                             <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.15)_0%,transparent_50%)]" />
                             <div className="relative flex items-center gap-3">
                               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
@@ -984,7 +984,7 @@ export default function App() {
               {/* How Might We */}
               <Card>
                 <SectionLabel>How Might We Statement</SectionLabel>
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-700 to-violet-600 px-5 py-4 shadow-lg shadow-brand-500/15">
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-950 to-blue-800 px-5 py-4 shadow-lg shadow-blue-900/20">
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
                   <p className="relative text-[15px] font-medium leading-relaxed text-white">&ldquo;How might we help people with attention difficulties recognize the real-time relationship between their phone habits and their stress — so they can make more intentional choices throughout the day?&rdquo;</p>
                 </div>
@@ -999,22 +999,22 @@ export default function App() {
               </Card>
 
               {/* Human-Centered Design Learnings */}
-              <Card>
-                <SectionLabel>Three Things We Learned From Human-Centered Design</SectionLabel>
+              <div className="rounded-2xl border p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)]" style={{ backgroundColor: "#0f2a44", borderColor: "rgba(30, 58, 138, 0.3)" }}>
+                <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-blue-200/70">Three Things We Learned From Human-Centered Design</div>
                 <div className="mt-4 grid gap-4 sm:grid-cols-3">
                   {[
                     ["1", "Prototype Fidelity Matters", "We learned that there are multiple kinds of prototypes. At first we thought we just needed one prototype, but the process showed us why lo-fi prototypes help test the core idea early while hi-fi prototypes help validate how the product actually feels."],
                     ["2", "Usability Testing Reveals Gaps", "Usability testing is a major part of product design because users find gaps in intuition that designers often miss. Watching people use the prototype helped us see where the experience needed to be clearer, simpler, or more useful."],
                     ["3", "Interviews Need Structure", "We learned that the interview process works best when participants have clear character profiles and the questions stay standardized. That made it easier to compare responses, identify patterns, and connect interview evidence back to our design decisions."],
                   ].map(([num, title, body]) => (
-                    <div key={num} className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-5">
-                      <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-violet-600 text-sm font-bold text-white shadow-sm">{num}</div>
-                      <h4 className="mb-2 text-base font-bold text-zinc-800">{title}</h4>
-                      <p className="text-sm leading-relaxed text-zinc-600">{body}</p>
+                    <div key={num} className="rounded-2xl border border-white/10 bg-white/10 p-5">
+                      <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-xl bg-white text-sm font-bold text-blue-950 shadow-sm">{num}</div>
+                      <h4 className="mb-2 text-base font-bold text-white">{title}</h4>
+                      <p className="text-sm leading-relaxed text-white/75">{body}</p>
                     </div>
                   ))}
                 </div>
-              </Card>
+              </div>
 
               {/* Design Process */}
               <div>
@@ -1091,29 +1091,29 @@ export default function App() {
                 </Card>
 
                 {/* Hi-fi Prototypes */}
-                <Card className="mb-6">
-                  <SectionLabel>Hi-fi Prototype Process</SectionLabel>
+                <div className="mb-6 rounded-2xl border p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)]" style={{ backgroundColor: "#0f2a44", borderColor: "rgba(30, 58, 138, 0.3)" }}>
+                  <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-blue-200/70">Hi-fi Prototype Process</div>
                   <div className="mt-5 grid gap-6 sm:grid-cols-3">
                     <div className="text-center">
                       <div className="overflow-hidden rounded-xl border border-zinc-200">
                         <img src="/stress-lock-hifi.png" alt="Stress Lock hi-fi prototype" className="w-full" />
                       </div>
-                      <div className="mt-3 text-sm font-bold text-zinc-800">Stress Lock</div>
+                      <div className="mt-3 text-sm font-bold text-white">Stress Lock</div>
                     </div>
                     <div className="text-center">
                       <div className="overflow-hidden rounded-xl border border-zinc-200">
                         <img src="/heartlock-hifi.png" alt="Heartlock hi-fi prototype" className="w-full" />
                       </div>
-                      <div className="mt-3 text-sm font-bold text-zinc-800">Heartlock</div>
+                      <div className="mt-3 text-sm font-bold text-white">Heartlock</div>
                     </div>
                     <div className="text-center">
                       <div className="overflow-hidden rounded-xl border border-zinc-200">
                         <img src="/stress-band-hifi.png" alt="Stress Monitoring Band hi-fi prototype" className="w-full" />
                       </div>
-                      <div className="mt-3 text-sm font-bold text-zinc-800">Stress Monitoring Band</div>
+                      <div className="mt-3 text-sm font-bold text-white">Stress Monitoring Band</div>
                     </div>
                   </div>
-                </Card>
+                </div>
 
                 {/* Usability Testing */}
                 <Card>
